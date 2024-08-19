@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="043f7c31-b869-47e5-ab49-2820bfe48fab" name="Changes" comment="" />
+    <list default="true" id="043f7c31-b869-47e5-ab49-2820bfe48fab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/calendarize-microservices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/calendarize-microservices.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/controller/AppUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/controller/AppUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/entity/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/entity/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/repository/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/repository/AppUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/resources/application.properties" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -22,7 +50,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AppuserServiceApplication.executor": "Debug",
+    "git-widget-placeholder": "feature/appuser-service",
     "jdk.selected.JAVA_MODULE": "19",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices/appuser-service",
@@ -37,7 +72,24 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AppuserServiceApplication">
+    <configuration name="AppuserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="appuser-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.appuserservice.AppuserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProjectServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="project-service" />
@@ -67,10 +119,28 @@
       <workItem from="1724057090342" duration="165000" />
       <workItem from="1724057299604" duration="82000" />
       <workItem from="1724057395143" duration="516000" />
+      <workItem from="1724071872838" duration="2820000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java</url>
+          <line>19</line>
+          <properties field="appUserRepository" class="com.example.appuserservice.service.AppUserService" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
