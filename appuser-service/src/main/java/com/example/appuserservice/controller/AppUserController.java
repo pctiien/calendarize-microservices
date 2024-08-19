@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("/api/user")
 @RequiredArgsConstructor
 public class AppUserController {
     private final AppUserService appUserService;
 
     @GetMapping
     public ResponseEntity<List<AppUser>> getAllUsers(){
+        System.out.println("kaka");
            return ResponseEntity.ok(appUserService.getAllUsers());
     }
     @PostMapping

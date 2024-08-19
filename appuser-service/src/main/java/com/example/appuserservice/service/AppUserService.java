@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AppUserService implements IAppUserService{
 
-    AppUserRepository appUserRepository;
+    private final AppUserRepository appUserRepository;
     @Override
     public List<AppUser> getAllUsers() {
         return appUserRepository.findAll();

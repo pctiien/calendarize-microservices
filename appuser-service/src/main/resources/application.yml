@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: "appuser-service"
+  datasource:
+    url: jdbc:sqlserver://DESKTOP-0O190JQ\SQLEXPRESS:1433;databaseName=appuser_ms;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: Adteamkingp3
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
