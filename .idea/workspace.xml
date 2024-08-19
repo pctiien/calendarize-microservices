@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="043f7c31-b869-47e5-ab49-2820bfe48fab" name="Changes" comment="" />
+    <list default="true" id="043f7c31-b869-47e5-ab49-2820bfe48fab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,9 +46,13 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AppuserServiceApplication.executor": "Debug",
     "git-widget-placeholder": "main",
+=======
+    "git-widget-placeholder": "feature/auth-service",
+>>>>>>> feature/auth-service
     "jdk.selected.JAVA_MODULE": "19",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices/appuser-service",
@@ -67,7 +76,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AppuserServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ProjectServiceApplication">
     <configuration name="AppuserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="appuser-service" />
@@ -106,6 +115,8 @@
       <workItem from="1724057299604" duration="82000" />
       <workItem from="1724057395143" duration="516000" />
       <workItem from="1724071872838" duration="2820000" />
+      <workItem from="1724057395143" duration="1358000" />
+      <workItem from="1724058831742" duration="416000" />
     </task>
     <servers />
   </component>
