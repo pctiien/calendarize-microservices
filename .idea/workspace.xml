@@ -13,11 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,29 +156,6 @@
           <url>file://$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java</url>
           <line>22</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java</url>
-          <line>47</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java</url>

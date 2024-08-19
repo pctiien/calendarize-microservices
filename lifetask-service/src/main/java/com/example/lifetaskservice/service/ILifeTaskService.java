@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ILifeTaskService {
     List<LifeTask> getLifeTasks();
+    List<LifeTask> getLifeTasksByUserId(Long userId);
     LifeTask createLifeTask(LifeTaskDto dto);
     LifeTask doneTask(Long id);
     LifeTask updateTask(LifeTask lifeTask);

@@ -20,6 +20,11 @@ public class LifeTaskController {
     {
         return ResponseEntity.ok(lifeTaskService.getLifeTasks());
     }
+    @GetMapping("/{userId}")
+    public ResponseEntity<List<LifeTask>> getLifeTasksByUserId(@PathVariable Long userId)
+    {
+        return ResponseEntity.ok(lifeTaskService.getLifeTasksByUserId(userId));
+    }
     @PostMapping
     public ResponseEntity<LifeTask> createLifeTask(@RequestBody LifeTaskDto lifeTaskDto)
     {

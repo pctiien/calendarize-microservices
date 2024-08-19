@@ -9,6 +9,7 @@ import com.example.lifetaskservice.repository.LifeTaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,6 +24,11 @@ public class LifeTaskServiceImpl implements ILifeTaskService{
         return lifeTaskRepository.findAll().stream()
                 .sorted(Comparator.comparing(LifeTask::getStartDate, Comparator.nullsLast(Comparator.naturalOrder())))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<LifeTask> getLifeTasksByUserId(Long userId) {
+        return lifeTaskRepository.findLifeTasksByUserId(userId).orElse(new ArrayList<>());
     }
 
     @Override
