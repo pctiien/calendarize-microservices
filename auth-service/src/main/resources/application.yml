@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: "appuser-service"
+    name: "auth-service"
   datasource:
     url: jdbc:sqlserver://DESKTOP-0O190JQ\SQLEXPRESS:1433;databaseName=appuser_ms;encrypt=true;trustServerCertificate=true
     username: sa
@@ -16,4 +16,4 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.SQLServerDialect
 server:
-  port: 8081
+  port: 8080

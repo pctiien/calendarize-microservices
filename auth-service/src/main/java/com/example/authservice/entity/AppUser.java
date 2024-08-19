@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name = "user")
+@Table(name = "app_user")
 @Builder
 @Entity
 @NoArgsConstructor
@@ -19,5 +19,6 @@ public class AppUser{
     private Long id;
     private String name;
     private String email;
+    @Column(name="pwd")
     private String password;
 }

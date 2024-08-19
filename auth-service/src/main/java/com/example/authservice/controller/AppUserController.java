@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AppUserController {
 
     private final IAuthService authService;
 
-    @PostMapping("/user/signUp")
+    @PostMapping("/signup")
     public ResponseEntity<?> signUp(@RequestBody AppUser user)
     {
         authService.signUp(user);

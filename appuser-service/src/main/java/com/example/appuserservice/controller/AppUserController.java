@@ -17,10 +17,9 @@ public class AppUserController {
 
     @GetMapping
     public ResponseEntity<List<AppUser>> getAllUsers(){
-        System.out.println("kaka");
-           return ResponseEntity.ok(appUserService.getAllUsers());
+        return ResponseEntity.ok(appUserService.getAllUsers());
     }
-    @PostMapping
+    @PutMapping
     public ResponseEntity<AppUserDto> updateUser(@RequestBody AppUserDto dto){
         appUserService.updateUser(dto);
         return ResponseEntity.ok(dto);
