@@ -24,6 +24,21 @@ create table project(
 	host_id bigint
 
 )
+create table project_task(
+	id bigint identity primary key,
+	name nvarchar(100),
+	description nvarchar(200),
+	start_date datetime,
+	end_date datetime,
+	status nvarchar(50),
+	project_id bigint,
+	constraint ProjectTask_FK foreign key(project_id) references project(id)
+)
+create table project_member(
+	project_id bigint ,
+	user_id bigint,
+	constraint Project_Member_PK primary key (project_id,user_id)
+)
 use master
 go
 create database lifetask_ms
@@ -38,20 +53,7 @@ create table life_task(
 	status nvarchar(50),
 	user_id bigint
 )
-use master
-go
-create database projecttask_ms
-go
-use projecttask_ms
-create table project_task(
-	id bigint identity primary key,
-	name nvarchar(100),
-	description nvarchar(200),
-	start_date datetime,
-	end_date datetime,
-	status nvarchar(50),
-	project_id bigint
-)
+
 use master;
 drop database appuser_ms
 drop database project_ms
