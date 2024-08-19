@@ -1,4 +1,4 @@
-package com.example.projectservice.entity;
+package com.example.lifetaskservice.entity;
 
 public enum Status {
     PENDING,
