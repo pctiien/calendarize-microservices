@@ -1,8 +1,8 @@
 spring:
   application:
-    name: "project-service"
+    name: "lifetask-service"
   datasource:
-    url: jdbc:sqlserver://DESKTOP-0O190JQ\SQLEXPRESS:1433;databaseName=project_ms;encrypt=true;trustServerCertificate=true
+    url: jdbc:sqlserver://DESKTOP-0O190JQ\SQLEXPRESS:1433;databaseName=lifetask_ms;encrypt=true;trustServerCertificate=true
     username: sa
     password: Adteamkingp3
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
@@ -15,4 +15,4 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.SQLServerDialect
 server:
-  port: 8082
+  port: 8083

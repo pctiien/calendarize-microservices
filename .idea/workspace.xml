@@ -17,6 +17,16 @@
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/IProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/ProjectServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
+>>>>>>> feature/project-service
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +67,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.AppuserServiceApplication.executor": "Run",
     "Spring Boot.AuthServiceApplication.executor": "Run",
     "Spring Boot.LifetaskServiceApplication.executor": "Debug",
@@ -143,6 +154,7 @@
       <workItem from="1724057395143" duration="1358000" />
       <workItem from="1724058831742" duration="416000" />
       <workItem from="1724078247157" duration="2347000" />
+      <workItem from="1724085346781" duration="5631000" />
     </task>
     <servers />
   </component>

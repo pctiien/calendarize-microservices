@@ -2,7 +2,7 @@ package com.example.projectservice.controller;
 
 import com.example.projectservice.dto.ProjectDto;
 import com.example.projectservice.entity.Project;
-import com.example.projectservice.service.IProjectService;
+import com.example.projectservice.service.project.IProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +25,18 @@ public class ProjectController {
     {
         return ResponseEntity.status(HttpStatus.CREATED).body(projectService.createProject(dto));
     }
+    @GetMapping("/{userId}")
+    public ResponseEntity<List<Project>> getProjectsByUserId(@PathVariable Long userId)
+    {
+        return ResponseEntity.ok(projectService.getProjectsByUser(userId));
+    }
+    @PostMapping("{projectId}/user/{userId}")
+    public ResponseEntity<Void> addMemberToProject(@PathVariable Long projectId,@PathVariable Long userId)
+    {
+        projectService.addMemberToProject(projectId,userId);
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.example.projectservice.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,16 +8,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Set;
-
 @Entity
-@Data
+@Table(name = "project_task")
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "project")
 @Builder
-public class Project {
+@Data
+public class ProjectTask {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,12 +26,9 @@ public class Project {
     private LocalDateTime endDate;
     @Enumerated(EnumType.STRING)
     private Status status = Status.PENDING;
-    @Column(name = "host_id")
-    private Long hostId;
 
-    @OneToMany(mappedBy = "project", fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
-    private Set<ProjectTask> projectTasks;
-
-
-
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "project_id")
+    private Project project;
 }
