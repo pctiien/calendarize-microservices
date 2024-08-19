@@ -11,9 +11,6 @@
         <module name="appuser-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="appuser-service" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
