@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="appuser-service" />
         <module name="auth-service" />
+        <module name="apigateway-server" />
         <module name="project-service" />
         <module name="eureka-server" />
         <module name="lifetask-service" />
@@ -17,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="apigateway-server" options="-parameters" />
       <module name="appuser-service" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
