@@ -13,20 +13,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/controller/LifeTaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/controller/LifeTaskController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/repository/LifeTaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/repository/LifeTaskRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/ILifeTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/ILifeTaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/LifeTaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/LifeTaskServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/eurekaserver">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,32 +76,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.AppuserServiceApplication.executor": "Run",
-    "Spring Boot.AuthServiceApplication.executor": "Run",
-    "Spring Boot.LifetaskServiceApplication.executor": "Run",
-    "Spring Boot.ProjectServiceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "19",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices/auth-service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AppuserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LifetaskServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProjectServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices/auth-service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -108,6 +129,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LifetaskServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="lifetask-service" />
@@ -124,6 +153,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AppuserServiceApplication" />
+      <item itemvalue="Spring Boot.LifetaskServiceApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ProjectServiceApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -151,7 +187,9 @@
       <workItem from="1724078247157" duration="2347000" />
       <workItem from="1724085346781" duration="5631000" />
       <workItem from="1724149024964" duration="1355000" />
-      <workItem from="1724150443358" duration="1326000" />
+      <workItem from="1724150443358" duration="2225000" />
+      <workItem from="1724152734853" duration="1360000" />
+      <workItem from="1724154168943" duration="1183000" />
     </task>
     <servers />
   </component>

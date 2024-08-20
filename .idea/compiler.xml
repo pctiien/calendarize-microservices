@@ -10,6 +10,7 @@
         <module name="appuser-service" />
         <module name="auth-service" />
         <module name="project-service" />
+        <module name="eureka-server" />
         <module name="lifetask-service" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="appuser-service" options="-parameters" />
       <module name="auth-service" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="lifetask-service" options="-parameters" />
       <module name="project-service" options="-parameters" />
     </option>
