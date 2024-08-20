@@ -12,5 +12,5 @@ public interface ILifeTaskService {
     LifeTask createLifeTask(LifeTaskDto dto);
     LifeTask doneTask(Long id);
     LifeTask updateTask(LifeTask lifeTask);
-    List<LifeTask> getLifeTaskBetween(Long userId ,LocalDate start, LocalDate end);
+    List<List<LifeTask>> getLifeTaskBetween(Long userId ,LocalDate start, LocalDate end);
 }

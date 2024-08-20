@@ -46,7 +46,7 @@ public class LifeTaskController {
     }
 
     @GetMapping(params = {"userId", "from", "to"})
-    public ResponseEntity<List<LifeTask>> getLifeTasksBetween(
+    public ResponseEntity<List<List<LifeTask>>> getLifeTasksBetween(
             @RequestParam Long userId,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate to) {

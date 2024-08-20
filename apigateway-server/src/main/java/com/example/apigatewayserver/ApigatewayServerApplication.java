@@ -26,7 +26,7 @@ public class ApigatewayServerApplication {
                 .route(p -> p
                         .path("/calendarize/life/tasks/**")
                         .filters( f -> f.rewritePath("/calendarize/life/tasks/(?<segment>.*)","api/life/tasks/${segment}"))
-                        .uri("lb://AUTH-SERVICE"))
+                        .uri("lb://LIFETASK-SERVICE"))
                 .route(p -> p
                         .path("/calendarize/projects/**")
                         .filters( f -> f.rewritePath("/calendarize/projects/(?<segment>.*)","api/projects/${segment}"))

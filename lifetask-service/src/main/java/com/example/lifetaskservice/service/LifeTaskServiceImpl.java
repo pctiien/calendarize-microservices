@@ -12,10 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -61,10 +58,20 @@ public class LifeTaskServiceImpl implements ILifeTaskService{
     }
 
     @Override
-    public List<LifeTask> getLifeTaskBetween(Long userId,LocalDate start, LocalDate end) {
+    public List<List<LifeTask>> getLifeTaskBetween(Long userId, LocalDate start, LocalDate end) {
         LocalDateTime startDate = start.atStartOfDay();
         LocalDateTime endDate = end.atTime(LocalTime.MAX);
-        return lifeTaskRepository.findAllByUserIdAndStartDateBetween(userId,startDate,endDate)
+
+        List<LifeTask> lifeTasks = lifeTaskRepository.findAllByUserIdAndStartDateBetween(userId, startDate, endDate)
                 .orElse(new ArrayList<>());
+
+        Map<LocalDate, List<LifeTask>> groupedByDate = lifeTasks.stream()
+                .filter(task -> task.getStartDate() != null)
+                .collect(Collectors.groupingBy(task -> task.getStartDate().toLocalDate()));
+        System.out.println("kaka");
+        return groupedByDate.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .map(Map.Entry::getValue)
+                .collect(Collectors.toList());
     }
 }
