@@ -13,20 +13,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/IProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/ProjectServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
->>>>>>> feature/project-service
+      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/controller/LifeTaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/controller/LifeTaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/repository/LifeTaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/repository/LifeTaskRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/ILifeTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/ILifeTaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/LifeTaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/LifeTaskServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.AppuserServiceApplication.executor": "Run",
     "Spring Boot.AuthServiceApplication.executor": "Run",
-    "Spring Boot.LifetaskServiceApplication.executor": "Debug",
+    "Spring Boot.LifetaskServiceApplication.executor": "Run",
     "Spring Boot.ProjectServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "19",
@@ -96,7 +91,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LifetaskServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ProjectServiceApplication">
     <configuration name="AppuserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="appuser-service" />
@@ -155,6 +150,8 @@
       <workItem from="1724058831742" duration="416000" />
       <workItem from="1724078247157" duration="2347000" />
       <workItem from="1724085346781" duration="5631000" />
+      <workItem from="1724149024964" duration="1355000" />
+      <workItem from="1724150443358" duration="1326000" />
     </task>
     <servers />
   </component>

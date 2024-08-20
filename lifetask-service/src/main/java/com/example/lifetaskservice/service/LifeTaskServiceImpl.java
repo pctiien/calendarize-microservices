@@ -9,9 +9,13 @@ import com.example.lifetaskservice.repository.LifeTaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -54,5 +58,13 @@ public class LifeTaskServiceImpl implements ILifeTaskService{
                 .orElseThrow(()-> new TaskNotFoundException("id",lifeTask.getId().toString()));
         lifeTaskRepository.save(lifeTask);
         return lifeTask;
+    }
+
+    @Override
+    public List<LifeTask> getLifeTaskBetween(Long userId,LocalDate start, LocalDate end) {
+        LocalDateTime startDate = start.atStartOfDay();
+        LocalDateTime endDate = end.atTime(LocalTime.MAX);
+        return lifeTaskRepository.findAllByUserIdAndStartDateBetween(userId,startDate,endDate)
+                .orElse(new ArrayList<>());
     }
 }
