@@ -79,7 +79,7 @@ public class LifeTaskServiceImpl implements ILifeTaskService{
     }
 
     @Override
-    @Scheduled(fixedDelay = 60000)
+    @Scheduled(fixedDelay = 300000)
     public void checkTaskIsOverdue() {
         List<LifeTask> overdueTasks = lifeTaskRepository.findByEndDateBeforeAndStatusIn(LocalDateTime.now(), List.of(Status.PENDING,Status.PROCESS))
                 .orElse(new ArrayList<>());

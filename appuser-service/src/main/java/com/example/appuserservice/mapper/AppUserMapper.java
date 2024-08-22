@@ -8,4 +8,10 @@ public class AppUserMapper {
         return AppUser.builder().email(dto.getEmail()).name(dto.getName()).password(dto.getPassword())
                 .build();
     }
+    public static AppUserDto toDto(AppUser user)
+    {
+        return AppUserDto.builder().email(user.getEmail())
+                .name(user.getName()).build();
+    }
+
 }

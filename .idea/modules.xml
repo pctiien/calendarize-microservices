@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/calendarize-microservices.iml" filepath="$PROJECT_DIR$/.idea/calendarize-microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project-service/project-service.iml" filepath="$PROJECT_DIR$/project-service/project-service.iml" />
     </modules>
   </component>
 </project>

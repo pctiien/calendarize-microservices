@@ -8,4 +8,5 @@ import java.util.List;
 public interface IAppUserService {
     List<AppUser> getAllUsers();
     AppUserDto updateUser(AppUserDto dto);
+    AppUserDto getUserById(Long userId);
 }

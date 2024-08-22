@@ -25,11 +25,18 @@ public class AppUserService implements IAppUserService{
     public AppUserDto updateUser(AppUserDto dto) {
         Optional<AppUser> optionalAppUser = appUserRepository.findAppUserByEmail(dto.getEmail());
         if(optionalAppUser.isEmpty()) {
-            throw new UserNotFoundException("user","email",dto.getEmail());
+            throw new UserNotFoundException("email",dto.getEmail());
         }
         AppUser user = AppUserMapper.toEntity(dto);
         user.setId(optionalAppUser.get().getId());
         appUserRepository.save(user);
         return dto;
+    }
+
+    @Override
+    public AppUserDto getUserById(Long userId) {
+        AppUser user = appUserRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("id",userId.toString()));
+        return AppUserMapper.toDto(user);
     }
 }

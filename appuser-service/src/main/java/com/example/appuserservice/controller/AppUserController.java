@@ -19,10 +19,15 @@ public class AppUserController {
     public ResponseEntity<List<AppUser>> getAllUsers(){
         return ResponseEntity.ok(appUserService.getAllUsers());
     }
+    @GetMapping("/{userId}")
+    public ResponseEntity<AppUserDto> getUserById(@PathVariable Long userId){
+        return ResponseEntity.ok(appUserService.getUserById(userId));
+    }
     @PutMapping
     public ResponseEntity<AppUserDto> updateUser(@RequestBody AppUserDto dto){
         appUserService.updateUser(dto);
         return ResponseEntity.ok(dto);
     }
+
 
 }

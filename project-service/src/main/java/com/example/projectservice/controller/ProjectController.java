@@ -1,6 +1,7 @@
 package com.example.projectservice.controller;
 
 import com.example.projectservice.dto.ProjectDto;
+import com.example.projectservice.dto.ProjectResponseDto;
 import com.example.projectservice.entity.Project;
 import com.example.projectservice.service.project.IProjectService;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +27,7 @@ public class ProjectController {
         return ResponseEntity.status(HttpStatus.CREATED).body(projectService.createProject(dto));
     }
     @GetMapping("/{userId}")
-    public ResponseEntity<List<Project>> getProjectsByUserId(@PathVariable Long userId)
+    public ResponseEntity<List<ProjectResponseDto>> getProjectsByUserId(@PathVariable Long userId)
     {
         return ResponseEntity.ok(projectService.getProjectsByUser(userId));
     }

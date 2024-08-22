@@ -13,16 +13,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/LifetaskServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/LifetaskServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/controller/AppUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/controller/AppUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/dto/AppUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/dto/AppUserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/mapper/AppUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/mapper/AppUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/IAppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/IAppUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/repository/LifeTaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/repository/LifeTaskRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/ILifeTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/ILifeTaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/LifeTaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/LifeTaskServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/ProjectServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/ProjectServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/IProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +122,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LifetaskServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ProjectServiceApplication">
     <configuration name="ApigatewayServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="apigateway-server" />
@@ -205,7 +213,7 @@
       <workItem from="1724167111690" duration="24000" />
       <workItem from="1724168640050" duration="5568000" />
       <workItem from="1724338728239" duration="2423000" />
-      <workItem from="1724341380907" duration="3267000" />
+      <workItem from="1724341380907" duration="11655000" />
     </task>
     <servers />
   </component>
@@ -216,20 +224,47 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java</url>
           <line>49</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java</url>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java</url>
           <line>19</line>
-          <properties field="appUserRepository" class="com.example.appuserservice.service.AppUserService" />
-          <option name="timeStamp" value="3" />
+          <properties class="com.example.projectservice.controller.ProjectController" method="getAllProjects">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java</url>
+          <line>29</line>
+          <properties class="com.example.projectservice.controller.ProjectController" method="getProjectsByUserId">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

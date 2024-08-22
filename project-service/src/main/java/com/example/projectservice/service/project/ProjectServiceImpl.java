@@ -1,6 +1,9 @@
 package com.example.projectservice.service.project;
 
+import com.example.projectservice.client.AppUserClient;
+import com.example.projectservice.dto.AppUserDto;
 import com.example.projectservice.dto.ProjectDto;
+import com.example.projectservice.dto.ProjectResponseDto;
 import com.example.projectservice.entity.Project;
 import com.example.projectservice.entity.ProjectMember;
 import com.example.projectservice.mapper.ProjectMapper;
@@ -10,9 +13,7 @@ import com.example.projectservice.repository.ProjectTaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,6 +22,7 @@ public class ProjectServiceImpl implements IProjectService {
     private final ProjectRepository projectRepository;
     private final ProjectTaskRepository projectTaskRepository;
     private final ProjectMemberRepository projectMemberRepository;
+    private final AppUserClient appUserClient;
 
     @Override
     public List<Project> getAllProjects() {
@@ -41,14 +43,44 @@ public class ProjectServiceImpl implements IProjectService {
     }
 
     @Override
-    public List<Project> getProjectsByUser(Long userId) {
+    public List<ProjectResponseDto> getProjectsByUser(Long userId) {
 
-        List<ProjectMember> projectMembers = projectMemberRepository.findAllByUserId(userId).orElse(new ArrayList<>());
-        return projectMembers.stream()
-                .map(pm->projectRepository.findById(pm.getProjectId()))
-                .filter(Optional::isPresent)
-                .map(Optional::get)
+        List<ProjectMember> projectMembers = projectMemberRepository.findAllByUserId(userId)
+                .orElse(new ArrayList<>());
+
+        List<Long> projectIds = projectMembers.stream()
+                .map(ProjectMember::getProjectId)
                 .collect(Collectors.toList());
+
+        List<Project> projects = projectRepository.findAllById(projectIds);
+
+        Map<Long, List<AppUserDto>> projectIdToUsersMap = new HashMap<>();
+
+        for (Long projectId : projectIds) {
+
+            List<Long> memberIds = projectMemberRepository.findAllByProjectId(projectId).orElse(new ArrayList<>())
+                    .stream().map(ProjectMember::getUserId).toList();
+
+            if(!projectIdToUsersMap.containsKey(projectId))
+            {
+                projectIdToUsersMap.put(projectId,new ArrayList<>());
+            }
+
+            memberIds.forEach(id->projectIdToUsersMap.get(projectId).add(appUserClient.getUserById(id).getBody()));
+
+        }
+
+        return projects.stream().map(project -> ProjectResponseDto.builder()
+                .id(project.getId())
+                .name(project.getName())
+                .appUsers(projectIdToUsersMap.getOrDefault(project.getId(), new ArrayList<>()))
+                .endDate(project.getEndDate())
+                .startDate(project.getStartDate())
+                .description(project.getDescription())
+                .status(project.getStatus())
+                .projectTasks(project.getProjectTasks())
+                .build()
+        ).collect(Collectors.toList());
     }
 }
 
