@@ -7,6 +7,8 @@ import com.example.lifetaskservice.exception.TaskNotFoundException;
 import com.example.lifetaskservice.mapper.LifeTaskMapper;
 import com.example.lifetaskservice.repository.LifeTaskRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -20,6 +22,8 @@ import java.util.stream.Collectors;
 public class LifeTaskServiceImpl implements ILifeTaskService{
 
     private final LifeTaskRepository lifeTaskRepository;
+    private final SimpMessagingTemplate messagingTemplate;
+
     @Override
     public List<LifeTask> getLifeTasks() {
         return lifeTaskRepository.findAll().stream()
@@ -68,10 +72,25 @@ public class LifeTaskServiceImpl implements ILifeTaskService{
         Map<LocalDate, List<LifeTask>> groupedByDate = lifeTasks.stream()
                 .filter(task -> task.getStartDate() != null)
                 .collect(Collectors.groupingBy(task -> task.getStartDate().toLocalDate()));
-        System.out.println("kaka");
         return groupedByDate.entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
                 .map(Map.Entry::getValue)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    @Scheduled(fixedDelay = 60000)
+    public void checkTaskIsOverdue() {
+        List<LifeTask> overdueTasks = lifeTaskRepository.findByEndDateBeforeAndStatusIn(LocalDateTime.now(), List.of(Status.PENDING,Status.PROCESS))
+                .orElse(new ArrayList<>());
+        overdueTasks.forEach(task -> task.setStatus(Status.OVERDUE));
+        lifeTaskRepository.saveAll(overdueTasks);
+        overdueTasks.stream().filter(task -> task.getUserId() != null)
+                .forEach(task -> {
+                    String destination = "/user/" + task.getUserId() + "/queue/lifetasks";
+                    messagingTemplate.convertAndSend(destination, task.getId().toString() + " is overdue");
+                });
+    }
+
+
 }

@@ -13,4 +13,5 @@ public interface ILifeTaskService {
     LifeTask doneTask(Long id);
     LifeTask updateTask(LifeTask lifeTask);
     List<List<LifeTask>> getLifeTaskBetween(Long userId ,LocalDate start, LocalDate end);
+    void checkTaskIsOverdue();
 }

@@ -14,23 +14,15 @@
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appuser-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid12824.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid12956.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid13980.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid16320.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid5844.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid7908.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid8932.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/LifetaskServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/LifetaskServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/repository/LifeTaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/ILifeTaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/service/LifeTaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/repository/LifeTaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/repository/LifeTaskRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/ILifeTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/ILifeTaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/LifeTaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/com/example/lifetaskservice/service/LifeTaskServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +90,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "19",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices/auth-service",
+    "last_opened_file_path": "H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -122,7 +114,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProjectServiceApplication">
+  <component name="RunManager" selected="Spring Boot.LifetaskServiceApplication">
     <configuration name="ApigatewayServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="apigateway-server" />
@@ -211,7 +203,9 @@
       <workItem from="1724154168943" duration="2821000" />
       <workItem from="1724157020620" duration="1595000" />
       <workItem from="1724167111690" duration="24000" />
-      <workItem from="1724168640050" duration="5361000" />
+      <workItem from="1724168640050" duration="5568000" />
+      <workItem from="1724338728239" duration="2423000" />
+      <workItem from="1724341380907" duration="3267000" />
     </task>
     <servers />
   </component>
@@ -225,11 +219,6 @@
           <url>file://$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java</url>
           <line>22</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java</url>
