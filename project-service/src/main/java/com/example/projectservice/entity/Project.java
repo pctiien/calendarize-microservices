@@ -1,11 +1,13 @@
 package com.example.projectservice.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -29,6 +31,6 @@ public class Project {
     @Column(name = "host_id")
     private Long hostId;
     @OneToMany(mappedBy = "project", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    private Set<ProjectTask> projectTasks;
+    private List<ProjectTask> projectTasks;
 
 }

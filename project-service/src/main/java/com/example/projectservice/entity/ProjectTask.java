@@ -26,9 +26,8 @@ public class ProjectTask {
     private LocalDateTime endDate;
     @Enumerated(EnumType.STRING)
     private Status status = Status.PENDING;
-
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "project_id")
     private Project project;
 }

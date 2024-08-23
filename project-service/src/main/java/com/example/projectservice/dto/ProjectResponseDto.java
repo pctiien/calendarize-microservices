@@ -19,6 +19,6 @@ public class ProjectResponseDto {
     private LocalDateTime endDate;
     private Status status  ;
     private Long hostId;
-    private List<AppUserDto> appUsers ;
-    private Set<ProjectTask> projectTasks;
+    private List<AppUserDto> members ;
+    private List<ProjectTask> projectTasks;
 }

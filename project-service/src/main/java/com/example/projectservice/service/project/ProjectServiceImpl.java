@@ -73,7 +73,7 @@ public class ProjectServiceImpl implements IProjectService {
         return projects.stream().map(project -> ProjectResponseDto.builder()
                 .id(project.getId())
                 .name(project.getName())
-                .appUsers(projectIdToUsersMap.getOrDefault(project.getId(), new ArrayList<>()))
+                .members(projectIdToUsersMap.getOrDefault(project.getId(), new ArrayList<>()))
                 .endDate(project.getEndDate())
                 .startDate(project.getStartDate())
                 .description(project.getDescription())
