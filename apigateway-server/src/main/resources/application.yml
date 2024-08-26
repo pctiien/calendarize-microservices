@@ -7,6 +7,13 @@ spring:
         locator:
           enabled: false
           lowerCaseServiceId: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:7080/realms/calendarize
+
+
 eureka:
   instance:
     preferIpAddress: true
