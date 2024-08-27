@@ -12,13 +12,7 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,7 +224,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java</url>
           <line>19</line>
-          <properties class="com.example.projectservice.controller.ProjectController" method="getAllProjects">
+          <properties class="com.example.projectservice.controller.ProjectController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -239,7 +233,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java</url>
           <line>29</line>
-          <properties class="com.example.projectservice.controller.ProjectController" method="getProjectsByUserId">
+          <properties class="com.example.projectservice.controller.ProjectController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
