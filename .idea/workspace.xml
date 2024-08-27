@@ -13,19 +13,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/KeycloakConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/KeycloakConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/KeycloakConverter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AppUserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/KeycloakAccessToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/IAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/IAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/KeycloakAccessToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/SignInDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/entity/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/repository/AppUserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/IAuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/KeycloakService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +93,7 @@
     "Spring Boot.EurekaServerApplication.executor": "Run",
     "Spring Boot.LifetaskServiceApplication.executor": "Run",
     "Spring Boot.ProjectServiceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/security",
     "jdk.selected.JAVA_MODULE": "19",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices",
@@ -213,7 +216,8 @@
       <workItem from="1724593161388" duration="4091000" />
       <workItem from="1724604243479" duration="1043000" />
       <workItem from="1724641778238" duration="1862000" />
-      <workItem from="1724683048076" duration="11381000" />
+      <workItem from="1724683048076" duration="11543000" />
+      <workItem from="1724763167192" duration="8476000" />
     </task>
     <servers />
   </component>
@@ -238,6 +242,16 @@
           <line>31</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/TokenProvider.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/TokenProvider.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java</url>
           <line>19</line>
@@ -256,7 +270,18 @@
           </properties>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/TokenProvider.java</url>
+          <line>19</line>
+          <properties field="appProperties" class="com.example.authservice.security.TokenProvider" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="userPrincipal" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

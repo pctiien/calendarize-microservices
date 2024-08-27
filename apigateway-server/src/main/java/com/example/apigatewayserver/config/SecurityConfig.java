@@ -25,9 +25,6 @@ import java.util.List;
 @EnableWebFluxSecurity
 public class SecurityConfig {
 
-    @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}")
-    private String issuerUri;
-
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http
@@ -37,21 +34,11 @@ public class SecurityConfig {
                         exchanges.pathMatchers("/calendarize/user/**").hasRole("ADMIN")
                                 .pathMatchers("/calendarize/auth/**").permitAll()
                                 .anyExchange().authenticated()
-                )
-                .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> jwt
-                        .jwtAuthenticationConverter(grantedAuthoritiesExtractor())
-                ));
+                );
 
         return http.build();
     }
 
-    private Converter<Jwt, Mono<AbstractAuthenticationToken>> grantedAuthoritiesExtractor() {
-        JwtAuthenticationConverter jwtAuthenticationConverter =
-                new JwtAuthenticationConverter();
-        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter
-                (new KeycloakConverter());
-        return new ReactiveJwtAuthenticationConverterAdapter(jwtAuthenticationConverter);
-    }
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
@@ -67,8 +54,4 @@ public class SecurityConfig {
         return source;
     }
 
-    @Bean
-    public ReactiveJwtDecoder jwtDecoder() {
-        return ReactiveJwtDecoders.fromIssuerLocation(issuerUri);
-    }
 }
