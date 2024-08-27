@@ -7,6 +7,8 @@ spring:
         locator:
           enabled: false
           lowerCaseServiceId: true
+
+
 eureka:
   instance:
     preferIpAddress: true

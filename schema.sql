@@ -3,12 +3,15 @@ go
 create database appuser_ms
 go
 use appuser_ms;
-create table app_user(
+create table users(
 	id bigint identity primary key,
 	name nvarchar(100),
-	email varchar(50),
+	email varchar(50) unique,
 	pwd varchar(200),
+	image_url varchar(200),
+	auth_provider varchar(50)
 )
+
 use master
 go
 create database project_ms
