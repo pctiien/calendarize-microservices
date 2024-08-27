@@ -15,12 +15,17 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.SQLServerDialect
-keycloak:
-  auth-server-url: http://localhost:7080
-  realm: calendarize
-  client-id: calendarize-callcenter-ac
-  client-secret: Pxh2humNHsIaPjpPCPKX83Xw0htNygsb
-  redirect-uri: http://localhost:8071/calendarize/auth/callback
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: Ov23li8Mh5yaM3O75v8W
+            clientSecret: a860ea01b0c331f802abec9b36d6c270c1a26e40
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - user:email
+              - read:user
 
 server:
   port: 8080
@@ -41,10 +46,6 @@ app:
   cors:
     allowedOrigins: http://localhost:3000,http://localhost:8080,http://localhost:5173
   oauth2:
-    # After successfully authenticating with the OAuth2 Provider,
-    # we'll be generating an auth token for the user and sending the token to the
-    # redirectUri mentioned by the client in the /oauth2/authorize request.
-    # We're not using cookies because they won't work well in mobile clients.
     authorizedRedirectUris:
       - http://localhost:5173/oauth2/redirect
       - myandroidapp://oauth2/redirect
