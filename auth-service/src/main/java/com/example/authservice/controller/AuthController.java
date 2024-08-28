@@ -7,6 +7,7 @@ import com.example.authservice.entity.User;
 import com.example.authservice.exception.UserAlreadyExistsException;
 import com.example.authservice.repository.UserRepository;
 import com.example.authservice.security.TokenProvider;
+import com.example.authservice.service.IAuthService;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -22,41 +23,25 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 class AuthController {
 
-    private final AuthenticationManager authenticationManager;
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final TokenProvider tokenProvider;
+    private final IAuthService authService;
 
 
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest, HttpServletResponse response)
     {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        loginRequest.getEmail(),
-                        loginRequest.getPassword()
-                )
-        );
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        String token = tokenProvider.createToken(authentication);
-        return ResponseEntity.ok(new AuthResponse(token));
+        return ResponseEntity.ok(authService.authenticateUser(loginRequest,response));
     }
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody SignUpRequest signUpRequest)
     {
-        if(userRepository.existsByEmail(signUpRequest.getEmail()))
-        {
-            throw new UserAlreadyExistsException("User already exists with email :" + signUpRequest.getEmail());
-        }
-        User user = User.builder().name(signUpRequest.getName())
-                .email(signUpRequest.getEmail())
-                .password(passwordEncoder.encode(signUpRequest.getPassword()))
-                .authProvider(AuthProvider.local).build();
-
-        userRepository.save(user);
-
         return ResponseEntity.ok()
-                .body(new ApiResponse(true, "User registered successfully"));
+                .body(authService.registerUser(signUpRequest));
     }
+    @GetMapping("/users/{userId}")
+    public ResponseEntity<UserResponse> getUserById(@PathVariable Long userId)
+    {
+        return ResponseEntity.ok(authService.getUserById(userId));
+    }
+
 }

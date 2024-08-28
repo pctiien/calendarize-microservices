@@ -7,6 +7,7 @@ import com.example.authservice.repository.UserRepository;
 import com.example.authservice.security.UserPrincipal;
 import com.example.authservice.security.oauth2.user.OAuth2UserInfo;
 import com.example.authservice.security.oauth2.user.OAuth2UserInfoFactory;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
@@ -26,6 +27,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
     private final UserRepository userRepository;
 
     @Override
+    @Transactional
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         OAuth2User oAuth2User = super.loadUser(userRequest);
         try {
