@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "appuser-service")
-public interface AppUserClient {
+@FeignClient(name = "auth-service")
+public interface AuthServiceClient {
     @GetMapping("/api/user/{userId}")
     ResponseEntity<AppUserDto> getUserById(@PathVariable Long userId);
 }

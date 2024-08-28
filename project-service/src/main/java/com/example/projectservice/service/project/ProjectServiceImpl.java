@@ -1,6 +1,6 @@
 package com.example.projectservice.service.project;
 
-import com.example.projectservice.client.AppUserClient;
+import com.example.projectservice.client.AuthServiceClient;
 import com.example.projectservice.dto.AppUserDto;
 import com.example.projectservice.dto.ProjectDto;
 import com.example.projectservice.dto.ProjectResponseDto;
@@ -22,7 +22,7 @@ public class ProjectServiceImpl implements IProjectService {
     private final ProjectRepository projectRepository;
     private final ProjectTaskRepository projectTaskRepository;
     private final ProjectMemberRepository projectMemberRepository;
-    private final AppUserClient appUserClient;
+    private final AuthServiceClient authServiceClient;
 
     @Override
     public List<Project> getAllProjects() {
@@ -66,7 +66,7 @@ public class ProjectServiceImpl implements IProjectService {
                 projectIdToUsersMap.put(projectId,new ArrayList<>());
             }
 
-            memberIds.forEach(id->projectIdToUsersMap.get(projectId).add(appUserClient.getUserById(id).getBody()));
+            memberIds.forEach(id->projectIdToUsersMap.get(projectId).add(authServiceClient.getUserById(id).getBody()));
 
         }
 
