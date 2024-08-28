@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.lang.NonNullApi;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.ReactiveSecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -27,15 +27,22 @@ public class TokenAuthenticationFilter implements WebFilter {
 
     @Override
     @NonNull
-    public Mono<Void> filter(@NonNull ServerWebExchange exchange, WebFilterChain chain) {
+    public Mono<Void> filter(@NonNull ServerWebExchange exchange,@NonNull WebFilterChain chain) {
         return Mono.just(exchange)
                 .flatMap(this::authenticate)
-                .then(chain.filter(exchange))
+                .flatMap(authentication -> {
+                    if (authentication != null) {
+                        return chain.filter(exchange)
+                                .contextWrite(ReactiveSecurityContextHolder.withAuthentication(authentication));
+                    }
+                    return chain.filter(exchange);
+                })
                 .onErrorResume(e -> {
                     logger.error("Filter error", e);
                     return Mono.empty(); // Consider propagating the error if needed
                 });
     }
+
 
     private Mono<Authentication> authenticate(ServerWebExchange exchange) {
         ServerHttpRequest request = exchange.getRequest();
@@ -61,7 +68,6 @@ public class TokenAuthenticationFilter implements WebFilter {
         }
         return Mono.empty();
     }
-
 
     private String getJwtFromRequest(ServerHttpRequest request) {
         HttpHeaders headers = request.getHeaders();

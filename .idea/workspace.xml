@@ -14,12 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/oauth2/CustomOAuth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/oauth2/CustomOAuth2UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,34 +66,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ApigatewayServerApplication.executor": "Debug",
-    "Spring Boot.AppuserServiceApplication.executor": "Run",
-    "Spring Boot.AuthServiceApplication.executor": "Run",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.LifetaskServiceApplication.executor": "Run",
-    "Spring Boot.ProjectServiceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "19",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApigatewayServerApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.AppuserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LifetaskServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProjectServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -209,7 +204,8 @@
       <workItem from="1724641778238" duration="1862000" />
       <workItem from="1724683048076" duration="11543000" />
       <workItem from="1724763167192" duration="8476000" />
-      <workItem from="1724827663605" duration="11086000" />
+      <workItem from="1724827663605" duration="11324000" />
+      <workItem from="1724847724035" duration="354000" />
     </task>
     <servers />
   </component>
@@ -246,68 +242,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="104" />
+          <line>30</line>
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
           <line>32</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="106" />
+          <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
           <line>34</line>
-          <option name="timeStamp" value="107" />
+          <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="108" />
+          <line>37</line>
+          <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="109" />
+          <line>40</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java</url>
