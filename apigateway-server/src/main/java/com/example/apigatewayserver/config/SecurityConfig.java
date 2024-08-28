@@ -1,12 +1,11 @@
 package com.example.apigatewayserver.config;
 
-import com.example.apigatewayserver.client.AuthServiceClient;
+import com.example.apigatewayserver.client.AuthWebClient;
 import com.example.apigatewayserver.security.TokenAuthenticationFilter;
 import com.example.apigatewayserver.security.TokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -24,7 +23,7 @@ import java.util.List;
 public class SecurityConfig {
 
     private final TokenProvider tokenProvider;
-    private final WebClient.Builder webClientBuilder;
+    private final AuthWebClient authWebClient;
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http
@@ -41,7 +40,7 @@ public class SecurityConfig {
 
     @Bean
     public TokenAuthenticationFilter tokenAuthenticationFilter() {
-        return new TokenAuthenticationFilter(tokenProvider,webClientBuilder);
+        return new TokenAuthenticationFilter(tokenProvider,authWebClient);
     }
 
     @Bean

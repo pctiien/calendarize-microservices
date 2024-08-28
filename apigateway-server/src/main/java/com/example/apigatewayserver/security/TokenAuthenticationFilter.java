@@ -1,5 +1,6 @@
 package com.example.apigatewayserver.security;
 
+import com.example.apigatewayserver.client.AuthWebClient;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -23,8 +24,8 @@ public class TokenAuthenticationFilter implements WebFilter {
     private static final Logger logger = LoggerFactory.getLogger(TokenAuthenticationFilter.class);
 
     private final TokenProvider tokenProvider;
-    private final WebClient.Builder webClientBuilder;
-
+ //   private final WebClient.Builder webClientBuilder;
+    private final AuthWebClient authWebClient;
     @Override
     @NonNull
     public Mono<Void> filter(@NonNull ServerWebExchange exchange,@NonNull WebFilterChain chain) {
@@ -50,11 +51,12 @@ public class TokenAuthenticationFilter implements WebFilter {
 
         if (jwt != null && tokenProvider.validateToken(jwt)) {
             Long userId = tokenProvider.getUserIdFromToken(jwt);
-            return webClientBuilder.build()
+            return /*webClientBuilder.build()
                     .get()
                     .uri("http://localhost:8080/api/auth/users/{userId}", userId)
                     .retrieve()
-                    .bodyToMono(User.class)
+                    .bodyToMono(User.class)*/
+                    authWebClient.getUserById(userId)
                     .flatMap(user -> {
                         UserDetails userDetails = UserPrincipal.create(user);
                         Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
