@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 @Builder
-public class AppUserDto {
+public class UserDto {
+    private Long id;
     private String name;
     private String email;
-    private String password;
 
 }

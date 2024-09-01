@@ -48,7 +48,7 @@ public class SecurityConfig  {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                //.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeRequests(authz -> authz
                         .anyRequest().permitAll()
@@ -73,7 +73,7 @@ public class SecurityConfig  {
 
 
 
-    @Bean
+ /*   @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
@@ -85,7 +85,7 @@ public class SecurityConfig  {
         config.setMaxAge(3600L);
         source.registerCorsConfiguration("/**", config);
         return source;
-    }
+    }*/
 
 
 }

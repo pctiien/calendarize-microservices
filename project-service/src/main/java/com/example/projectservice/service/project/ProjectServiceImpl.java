@@ -1,15 +1,14 @@
 package com.example.projectservice.service.project;
 
 import com.example.projectservice.client.AuthServiceClient;
-import com.example.projectservice.dto.AppUserDto;
 import com.example.projectservice.dto.ProjectDto;
 import com.example.projectservice.dto.ProjectResponseDto;
+import com.example.projectservice.dto.UserDto;
 import com.example.projectservice.entity.Project;
 import com.example.projectservice.entity.ProjectMember;
 import com.example.projectservice.mapper.ProjectMapper;
 import com.example.projectservice.repository.ProjectMemberRepository;
 import com.example.projectservice.repository.ProjectRepository;
-import com.example.projectservice.repository.ProjectTaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +19,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProjectServiceImpl implements IProjectService {
     private final ProjectRepository projectRepository;
-    private final ProjectTaskRepository projectTaskRepository;
     private final ProjectMemberRepository projectMemberRepository;
     private final AuthServiceClient authServiceClient;
 
@@ -54,7 +52,7 @@ public class ProjectServiceImpl implements IProjectService {
 
         List<Project> projects = projectRepository.findAllById(projectIds);
 
-        Map<Long, List<AppUserDto>> projectIdToUsersMap = new HashMap<>();
+        Map<Long, List<UserDto>> projectIdToUsersMap = new HashMap<>();
 
         for (Long projectId : projectIds) {
 
