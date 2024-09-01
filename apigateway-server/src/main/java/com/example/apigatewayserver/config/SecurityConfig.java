@@ -36,7 +36,7 @@ public class SecurityConfig {
                                 .pathMatchers("/calendarize/auth/**").permitAll()
                                 .anyExchange().authenticated()
                 )
-                .addFilterAt(tokenAuthenticationFilter(), SecurityWebFiltersOrder.AUTHORIZATION); // Thay đổi từ addFilterBefore
+                .addFilterAt(tokenAuthenticationFilter(), SecurityWebFiltersOrder.AUTHORIZATION);
         return http.build();
     }
 

@@ -22,7 +22,7 @@ spring:
           github:
             clientId: Ov23li8Mh5yaM3O75v8W
             clientSecret: a860ea01b0c331f802abec9b36d6c270c1a26e40
-            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            redirectUri: http://localhost:8080/oauth2/callback/github
             scope:
               - user:email
               - read:user
@@ -44,9 +44,7 @@ app:
     tokenSecret: 04ca023b39512e46d0c2cf4b48d5aac61d34302994c87ed4eff225dcf3b0a218739f3897051a057f9b846a69ea2927a587044164b7bae5e1306219d50b588cb1
     tokenExpirationMsec: 864000000
   cors:
-    allowedOrigins: http://localhost:3000,http://localhost:8080,http://localhost:5173
+    allowedOrigins: http://localhost:8080,http://localhost:5173
   oauth2:
     authorizedRedirectUris:
       - http://localhost:5173/oauth2/redirect
-      - myandroidapp://oauth2/redirect
-      - myiosapp://oauth2/redirect

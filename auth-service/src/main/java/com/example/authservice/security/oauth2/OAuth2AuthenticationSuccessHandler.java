@@ -18,6 +18,7 @@ import java.net.URI;
 import java.util.Optional;
 
 import static com.example.authservice.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository.REDIRECT_URI_PARAM_COOKIE_NAME;
+import static com.example.authservice.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository.CLIENT_BASE_URL_COOKIE_NAME;
 
 
 @Component
@@ -52,14 +53,14 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
     }
 
     protected String determineTargetUrl(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-        Optional<String> redirectUri = CookieUtils.getCookie(request, REDIRECT_URI_PARAM_COOKIE_NAME)
+        Optional<String> redirectUri = CookieUtils.getCookie(request, CLIENT_BASE_URL_COOKIE_NAME)
                 .map(Cookie::getValue);
 
         if(redirectUri.isPresent() && !isAuthorizedRedirectUri(redirectUri.get())) {
             throw new BadRequestException("Sorry! We've got an Unauthorized Redirect URI and can't proceed with the authentication");
         }
 
-        String targetUrl = redirectUri.orElse(getDefaultTargetUrl());
+        String targetUrl = redirectUri.orElse("http://localhost:5173/oauth2/callback");
 
         String token = tokenProvider.createToken(authentication);
 

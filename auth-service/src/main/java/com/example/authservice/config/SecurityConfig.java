@@ -48,14 +48,13 @@ public class SecurityConfig  {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                //.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeRequests(authz -> authz
                         .anyRequest().permitAll()
                 )
                 .oauth2Login(oauth2 -> oauth2
                         .authorizationEndpoint(authorization -> authorization
-                                .baseUri("/oauth2/authorize")
+                                .baseUri("/api/auth/oauth2/authorize")
                                 .authorizationRequestRepository(cookieAuthorizationRequestRepository())
                         )
                         .redirectionEndpoint(redirection -> redirection
@@ -65,27 +64,14 @@ public class SecurityConfig  {
                                 .userService(customOAuth2UserService)
                         )
                         .successHandler(oAuth2AuthenticationSuccessHandler)
-                );
+                )
+                ;
 
         ;
         return http.build();
     }
 
 
-
- /*   @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Collections.singletonList("http://localhost:5173"));
-        config.setAllowedMethods(Collections.singletonList("*"));
-        config.setAllowCredentials(true);
-        config.addAllowedHeader("*");
-        config.setExposedHeaders(List.of("Authorization"));
-        config.setMaxAge(3600L);
-        source.registerCorsConfiguration("/**", config);
-        return source;
-    }*/
 
 
 }
