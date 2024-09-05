@@ -37,10 +37,11 @@ create table project_task(
 	project_id bigint,
 	constraint ProjectTask_FK foreign key(project_id) references project(id)
 )
-create table project_member(
-	project_id bigint ,
+
+create table task_member(
+	task_id bigint ,
 	user_id bigint,
-	constraint Project_Member_PK primary key (project_id,user_id)
+	constraint Task_Member_PK primary key (task_id,user_id)
 )
 use master
 go

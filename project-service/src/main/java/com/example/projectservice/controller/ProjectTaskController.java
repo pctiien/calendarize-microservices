@@ -3,10 +3,8 @@ package com.example.projectservice.controller;
 import com.example.projectservice.dto.ProjectTaskDto;
 import com.example.projectservice.entity.ProjectTask;
 import com.example.projectservice.service.project_task.IProjectTaskService;
-import com.example.projectservice.service.project_task.ProjectTaskServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,6 +37,13 @@ public class ProjectTaskController {
         projectTaskService.doneProjectTask(projectTaskId);
         return ResponseEntity.noContent().build();
     }
+    @PostMapping("{projectTaskId}/user/{userId}")
+    public ResponseEntity<Void> addMemberToProject(@PathVariable Long userId, @PathVariable Long projectTaskId)
+    {
+        projectTaskService.assignTo(projectTaskId,userId);
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 }

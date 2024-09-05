@@ -5,6 +5,7 @@ import com.example.projectservice.dto.ProjectResponseDto;
 import com.example.projectservice.entity.Project;
 import com.example.projectservice.service.project.IProjectService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,10 +27,15 @@ public class ProjectController {
     {
         return ResponseEntity.status(HttpStatus.CREATED).body(projectService.createProject(dto));
     }
-    @GetMapping("/{userId}")
-    public ResponseEntity<List<ProjectResponseDto>> getProjectsByUserId(@PathVariable Long userId)
+    @GetMapping(params = "projectId")
+    public ResponseEntity<ProjectResponseDto> getProjectByProject(@Param("projectId") Long projectId)
     {
-        return ResponseEntity.ok(projectService.getProjectsByUser(userId));
+        return ResponseEntity.ok(projectService.getProjectByProjectId(projectId));
+    }
+    @GetMapping(params = "userId")
+    public ResponseEntity<List<ProjectDto>> getProjectsByUser(@Param("userId") Long userId)
+    {
+        return ResponseEntity.ok(projectService.getProjectsByUserId(userId));
     }
     @PostMapping("{projectId}/user/{userId}")
     public ResponseEntity<Void> addMemberToProject(@PathVariable Long projectId,@PathVariable Long userId)

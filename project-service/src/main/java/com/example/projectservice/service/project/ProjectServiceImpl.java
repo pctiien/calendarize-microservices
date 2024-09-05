@@ -3,12 +3,15 @@ package com.example.projectservice.service.project;
 import com.example.projectservice.client.AuthServiceClient;
 import com.example.projectservice.dto.ProjectDto;
 import com.example.projectservice.dto.ProjectResponseDto;
+import com.example.projectservice.dto.TeamMember;
 import com.example.projectservice.dto.UserDto;
 import com.example.projectservice.entity.Project;
-import com.example.projectservice.entity.ProjectMember;
+import com.example.projectservice.entity.TaskMember;
+import com.example.projectservice.exception.ProjectNotFoundException;
 import com.example.projectservice.mapper.ProjectMapper;
-import com.example.projectservice.repository.ProjectMemberRepository;
 import com.example.projectservice.repository.ProjectRepository;
+import com.example.projectservice.repository.ProjectTaskRepository;
+import com.example.projectservice.repository.TaskMemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +22,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProjectServiceImpl implements IProjectService {
     private final ProjectRepository projectRepository;
-    private final ProjectMemberRepository projectMemberRepository;
+    private final TaskMemberRepository taskMemberRepository;
     private final AuthServiceClient authServiceClient;
+    private final ProjectTaskRepository projectTaskRepository;
 
     @Override
     public List<Project> getAllProjects() {
@@ -35,50 +39,56 @@ public class ProjectServiceImpl implements IProjectService {
         return project;
     }
     @Override
-    public void addMemberToProject(Long projectId,Long userId)
+    public void addMemberToProject(Long taskId,Long userId)
     {
-        projectMemberRepository.save(new ProjectMember(projectId,userId));
+        taskMemberRepository.save(new TaskMember(taskId,userId));
     }
 
     @Override
-    public List<ProjectResponseDto> getProjectsByUser(Long userId) {
+    public ProjectResponseDto getProjectByProjectId(Long projectId) {
 
-        List<ProjectMember> projectMembers = projectMemberRepository.findAllByUserId(userId)
+        Project project = projectRepository.findById(projectId).orElseThrow(()->new ProjectNotFoundException("id",projectId.toString()));
+
+        List<TaskMember> projectMembers = taskMemberRepository.findAllByProjectId(projectId)
                 .orElse(new ArrayList<>());
 
-        List<Long> projectIds = projectMembers.stream()
-                .map(ProjectMember::getProjectId)
-                .collect(Collectors.toList());
+        List<Long> teamMemberIds = projectMembers.stream()
+                .map(TaskMember::getUserId)
+                .distinct()
+                .toList();
+        List<UserDto> members = teamMemberIds.stream().map(mem->authServiceClient.getUserById(mem).getBody()).toList();
 
-        List<Project> projects = projectRepository.findAllById(projectIds);
-
-        Map<Long, List<UserDto>> projectIdToUsersMap = new HashMap<>();
-
-        for (Long projectId : projectIds) {
-
-            List<Long> memberIds = projectMemberRepository.findAllByProjectId(projectId).orElse(new ArrayList<>())
-                    .stream().map(ProjectMember::getUserId).toList();
-
-            if(!projectIdToUsersMap.containsKey(projectId))
-            {
-                projectIdToUsersMap.put(projectId,new ArrayList<>());
-            }
-
-            memberIds.forEach(id->projectIdToUsersMap.get(projectId).add(authServiceClient.getUserById(id).getBody()));
-
-        }
-
-        return projects.stream().map(project -> ProjectResponseDto.builder()
+        return ProjectResponseDto.builder()
                 .id(project.getId())
-                .name(project.getName())
-                .members(projectIdToUsersMap.getOrDefault(project.getId(), new ArrayList<>()))
-                .endDate(project.getEndDate())
-                .startDate(project.getStartDate())
+                .hostId(project.getHostId())
                 .description(project.getDescription())
+                .name(project.getName())
                 .status(project.getStatus())
-                .projectTasks(project.getProjectTasks())
+                .startDate(project.getStartDate())
+                .endDate(project.getEndDate())
+                .members(members.stream().map(
+                        m->TeamMember.builder()
+                                .id(m.getId())
+                                .name(m.getName())
+                                .email(m.getEmail())
+                                .projectTasks(projectTaskRepository.findAllByUserId(m.getId()).orElse(new ArrayList<>()))
+                                .build()
+                ).toList())
+                .build() ;
+    }
+
+    @Override
+    public List<ProjectDto> getProjectsByUserId(Long userId) {
+        List<Project> projects = projectRepository.findAllByUserId(userId).orElse(new ArrayList<>());
+        return projects.stream().map(p -> ProjectDto.builder()
+                .id(p.getId())
+                .hostId(p.getHostId())
+                .name(p.getName())
+                .status(p.getStatus())
+                .startDate(p.getStartDate())
+                .endDate(p.getEndDate())
                 .build()
-        ).collect(Collectors.toList());
+        ).collect(Collectors.toList()) ;
     }
 }
 

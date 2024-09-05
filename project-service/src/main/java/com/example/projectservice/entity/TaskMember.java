@@ -10,13 +10,13 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "project_member")
-@IdClass(ProjectMemberId.class)
+@Table(name = "task_member")
+@IdClass(TaskMemberId.class)
 @Data
-public class ProjectMember {
+public class TaskMember {
     @Id
-    @Column(name ="project_id")
-    private Long projectId;
+    @Column(name ="task_id")
+    private Long taskId;
     @Id
     @Column(name = "user_id")
     private Long userId;

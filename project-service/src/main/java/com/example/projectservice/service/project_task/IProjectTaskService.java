@@ -10,4 +10,5 @@ public interface IProjectTaskService {
     List<ProjectTask> getProjectTasksByProjectId(Long projectId);
     ProjectTask createProjectTask(ProjectTaskDto dto);
     void doneProjectTask(Long projectTaskId);
+    void assignTo(Long projectTaskId, Long userId);
 }

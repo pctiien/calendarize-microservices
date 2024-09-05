@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 @Entity
 @Table(name = "project_task")
 @NoArgsConstructor
@@ -30,4 +32,5 @@ public class ProjectTask {
     @ManyToOne
     @JoinColumn(name = "project_id")
     private Project project;
+
 }

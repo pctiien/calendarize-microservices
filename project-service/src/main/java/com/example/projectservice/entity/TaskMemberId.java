@@ -2,15 +2,15 @@ package com.example.projectservice.entity;
 
 import java.io.Serializable;
 
-public class ProjectMemberId implements Serializable {
+public class TaskMemberId implements Serializable {
 
-    private Long projectId;
+    private Long taskId;
     private Long userId;
 
-    public ProjectMemberId() {}
+    public TaskMemberId() {}
 
-    public ProjectMemberId(Long projectId, Long userId) {
-        this.projectId = projectId;
+    public TaskMemberId(Long taskId, Long userId) {
+        this.taskId = taskId;
         this.userId = userId;
     }
 
@@ -19,15 +19,15 @@ public class ProjectMemberId implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ProjectMemberId that = (ProjectMemberId) o;
+        TaskMemberId that = (TaskMemberId) o;
 
-        if (!projectId.equals(that.projectId)) return false;
+        if (!taskId.equals(that.taskId)) return false;
         return userId.equals(that.userId);
     }
 
     @Override
     public int hashCode() {
-        int result = projectId.hashCode();
+        int result = taskId.hashCode();
         result = 31 * result + userId.hashCode();
         return result;
     }
