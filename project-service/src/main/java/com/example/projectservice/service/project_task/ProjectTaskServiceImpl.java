@@ -39,7 +39,8 @@ public class ProjectTaskServiceImpl implements IProjectTaskService{
         Project project =  projectRepository.findById(dto.getProjectId()).orElseThrow(()-> new ProjectNotFoundException("id",dto.getProjectId().toString()));
         ProjectTask projectTask = ProjectTaskMapper.mapToProjectTask(dto);
         projectTask.setProject(project);
-        projectTaskRepository.save(projectTask);
+        projectTask = projectTaskRepository.save(projectTask);
+        assignTo(projectTask.getId(),project.getHostId());
         return projectTask;
     }
 

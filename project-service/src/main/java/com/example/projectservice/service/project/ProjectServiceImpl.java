@@ -15,6 +15,9 @@ import com.example.projectservice.repository.TaskMemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -72,6 +75,41 @@ public class ProjectServiceImpl implements IProjectService {
                                 .name(m.getName())
                                 .email(m.getEmail())
                                 .projectTasks(projectTaskRepository.findAllByUserId(m.getId()).orElse(new ArrayList<>()))
+                                .build()
+                ).toList())
+                .build() ;
+    }
+
+    @Override
+    public ProjectResponseDto getProjectByIdBetween(Long projectId, LocalDate from, LocalDate to) {
+        LocalDateTime startDate = from.atStartOfDay();
+        LocalDateTime endDate = to.atTime(LocalTime.MAX);
+
+        Project project = projectRepository.findById(projectId).orElseThrow(()->new ProjectNotFoundException("id",projectId.toString()));
+
+        List<TaskMember> projectMembers = taskMemberRepository.findAllByProjectId(projectId)
+                .orElse(new ArrayList<>());
+
+        List<Long> teamMemberIds = projectMembers.stream()
+                .map(TaskMember::getUserId)
+                .distinct()
+                .toList();
+        List<UserDto> members = teamMemberIds.stream().map(mem->authServiceClient.getUserById(mem).getBody()).toList();
+
+        return ProjectResponseDto.builder()
+                .id(project.getId())
+                .hostId(project.getHostId())
+                .description(project.getDescription())
+                .name(project.getName())
+                .status(project.getStatus())
+                .startDate(project.getStartDate())
+                .endDate(project.getEndDate())
+                .members(members.stream().map(
+                        m->TeamMember.builder()
+                                .id(m.getId())
+                                .name(m.getName())
+                                .email(m.getEmail())
+                                .projectTasks(projectTaskRepository.findAllByUserIdBetween(m.getId(),startDate,endDate).orElse(new ArrayList<>()))
                                 .build()
                 ).toList())
                 .build() ;

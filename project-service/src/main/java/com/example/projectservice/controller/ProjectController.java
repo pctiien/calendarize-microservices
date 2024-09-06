@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -31,6 +32,14 @@ public class ProjectController {
     public ResponseEntity<ProjectResponseDto> getProjectByProject(@Param("projectId") Long projectId)
     {
         return ResponseEntity.ok(projectService.getProjectByProjectId(projectId));
+    }
+    @GetMapping(params = {"projectId","from","to"})
+    public ResponseEntity<ProjectResponseDto> getProjectByIdBetween(
+            @Param("projectId") Long projectId,
+            @Param("from") LocalDate from,
+            @Param("to") LocalDate to)
+    {
+        return ResponseEntity.ok(projectService.getProjectByIdBetween(projectId,from,to));
     }
     @GetMapping(params = "userId")
     public ResponseEntity<List<ProjectDto>> getProjectsByUser(@Param("userId") Long userId)
