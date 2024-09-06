@@ -6,6 +6,7 @@ import com.example.projectservice.entity.ProjectTask;
 import com.example.projectservice.entity.Status;
 import com.example.projectservice.entity.TaskMember;
 import com.example.projectservice.exception.ProjectNotFoundException;
+import com.example.projectservice.exception.TaskNotFoundException;
 import com.example.projectservice.mapper.ProjectTaskMapper;
 import com.example.projectservice.repository.ProjectRepository;
 import com.example.projectservice.repository.ProjectTaskRepository;
@@ -40,7 +41,6 @@ public class ProjectTaskServiceImpl implements IProjectTaskService{
         ProjectTask projectTask = ProjectTaskMapper.mapToProjectTask(dto);
         projectTask.setProject(project);
         projectTask = projectTaskRepository.save(projectTask);
-        assignTo(projectTask.getId(),project.getHostId());
         return projectTask;
     }
 
@@ -57,4 +57,41 @@ public class ProjectTaskServiceImpl implements IProjectTaskService{
     public void assignTo(Long projectTaskId, Long userId) {
         taskMemberRepository.save(new TaskMember(projectTaskId,userId));
     }
+
+    @Transactional
+    @Override
+    public void deleteTask(Long projectTaskId) {
+        projectTaskRepository.deleteById(projectTaskId);
+        taskMemberRepository.deleteAllByTaskId(projectTaskId);
+    }
+
+    @Override
+    public ProjectTask editProjectTask(ProjectTaskDto dto) {
+        ProjectTask projectTask = projectTaskRepository.findById(dto.getId()).orElseThrow(()->new TaskNotFoundException("id",dto.getId().toString()));
+        ProjectTask newProjectTask = ProjectTaskMapper.mapToProjectTask(dto);
+        newProjectTask.setId(projectTask.getId());
+        newProjectTask.setProject(projectTask.getProject());
+        newProjectTask = projectTaskRepository.save(newProjectTask);
+        return newProjectTask;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

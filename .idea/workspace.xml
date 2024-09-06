@@ -14,11 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/IProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/dto/ProjectTaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/dto/ProjectTaskDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/TaskMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/TaskMemberRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/IProjectTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/IProjectTaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/ProjectTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/ProjectTaskServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +83,7 @@
     "Spring Boot.AuthServiceApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
     "Spring Boot.LifetaskServiceApplication.executor": "Run",
-    "Spring Boot.ProjectServiceApplication.executor": "Debug",
+    "Spring Boot.ProjectServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "19",
     "kotlin-language-version-configured": "true",
@@ -215,7 +215,7 @@
       <workItem from="1725188827435" duration="17630000" />
       <workItem from="1725362143010" duration="8361000" />
       <workItem from="1725531769023" duration="15111000" />
-      <workItem from="1725609781068" duration="4562000" />
+      <workItem from="1725609781068" duration="12421000" />
     </task>
     <servers />
   </component>
@@ -289,26 +289,6 @@
           <url>file://$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java</url>
           <line>43</line>
           <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="160" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/TokenProvider.java</url>

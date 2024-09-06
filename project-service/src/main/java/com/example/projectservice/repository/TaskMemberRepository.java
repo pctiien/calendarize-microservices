@@ -15,4 +15,6 @@ public interface TaskMemberRepository extends JpaRepository<TaskMember, TaskMemb
 
     @Query("Select tm from TaskMember tm join ProjectTask pt on pt.id = tm.taskId where pt.project.id = :projectId")
     Optional<List<TaskMember>> findAllByProjectId(Long projectId);
+
+    void deleteAllByTaskId(Long taskId);
 }

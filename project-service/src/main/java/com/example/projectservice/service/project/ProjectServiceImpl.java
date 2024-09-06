@@ -6,6 +6,7 @@ import com.example.projectservice.dto.ProjectResponseDto;
 import com.example.projectservice.dto.TeamMember;
 import com.example.projectservice.dto.UserDto;
 import com.example.projectservice.entity.Project;
+import com.example.projectservice.entity.ProjectTask;
 import com.example.projectservice.entity.TaskMember;
 import com.example.projectservice.exception.ProjectNotFoundException;
 import com.example.projectservice.mapper.ProjectMapper;
@@ -109,7 +110,7 @@ public class ProjectServiceImpl implements IProjectService {
                                 .id(m.getId())
                                 .name(m.getName())
                                 .email(m.getEmail())
-                                .projectTasks(projectTaskRepository.findAllByUserIdBetween(m.getId(),startDate,endDate).orElse(new ArrayList<>()))
+                                .projectTasks(projectTaskRepository.findAllByUserIdBetween(m.getId(),startDate,endDate).orElse(new ArrayList<>()).stream().sorted(Comparator.comparing(ProjectTask::getStartDate)).toList())
                                 .build()
                 ).toList())
                 .build() ;

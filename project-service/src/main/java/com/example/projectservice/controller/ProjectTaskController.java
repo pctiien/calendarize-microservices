@@ -44,6 +44,20 @@ public class ProjectTaskController {
         return ResponseEntity.noContent().build();
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteTask(@PathVariable("id") Long projectTaskId)
+    {
+        projectTaskService.deleteTask(projectTaskId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping
+    public ResponseEntity<ProjectTask> editTask(@RequestBody ProjectTaskDto dto)
+    {
+        return ResponseEntity.ok(projectTaskService.editProjectTask(dto));
+    }
+
+
 
 
 }
