@@ -90,6 +90,12 @@ public class ProjectTaskServiceImpl implements IProjectTaskService{
         newProjectTask = projectTaskRepository.save(newProjectTask);
         return newProjectTask;
     }
+
+    @Override
+    public List<UserDto> getUsersFromTaskId(Long taskId) {
+        List<TaskMember> userIds = taskMemberRepository.findAllByTaskId(taskId).orElse(new ArrayList<>());
+        return userIds.stream().map(u->authServiceClient.getUserById(u.getUserId()).getBody()).toList();
+    }
 }
 
 

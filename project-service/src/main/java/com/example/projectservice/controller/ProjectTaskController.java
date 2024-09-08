@@ -1,6 +1,7 @@
 package com.example.projectservice.controller;
 
 import com.example.projectservice.dto.ProjectTaskDto;
+import com.example.projectservice.dto.UserDto;
 import com.example.projectservice.entity.ProjectTask;
 import com.example.projectservice.service.project_task.IProjectTaskService;
 import lombok.RequiredArgsConstructor;
@@ -37,13 +38,13 @@ public class ProjectTaskController {
         projectTaskService.doneProjectTask(projectTaskId);
         return ResponseEntity.noContent().build();
     }
-    @PostMapping("{projectTaskId}/user/{userId}")
+    @PostMapping("{projectTaskId}/users/{userId}")
     public ResponseEntity<Void> addMemberToProject(@PathVariable Long userId, @PathVariable Long projectTaskId)
     {
         projectTaskService.assignTo(projectTaskId,userId);
         return ResponseEntity.noContent().build();
     }
-    @PutMapping(value = "{projectTaskId}/user",params= "email")
+    @PutMapping(value = "{projectTaskId}/users",params= "email")
     public ResponseEntity<Void> addMemberToProject(@RequestParam String email , @PathVariable Long projectTaskId)
     {
         projectTaskService.assignTo(projectTaskId,email);
@@ -62,6 +63,12 @@ public class ProjectTaskController {
     {
         return ResponseEntity.ok(projectTaskService.editProjectTask(dto));
     }
+    @GetMapping("{taskId}/users")
+    public ResponseEntity<List<UserDto>> getUsersFromTaskId(@PathVariable Long taskId)
+    {
+        return ResponseEntity.ok(projectTaskService.getUsersFromTaskId(taskId));
+    }
+
 
 
 

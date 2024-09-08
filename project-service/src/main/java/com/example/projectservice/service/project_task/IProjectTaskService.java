@@ -1,6 +1,7 @@
 package com.example.projectservice.service.project_task;
 
 import com.example.projectservice.dto.ProjectTaskDto;
+import com.example.projectservice.dto.UserDto;
 import com.example.projectservice.entity.ProjectTask;
 
 import java.util.List;
@@ -14,4 +15,5 @@ public interface IProjectTaskService {
     void assignTo(Long projectTaskId, String email);
     void deleteTask(Long projectTaskId);
     ProjectTask editProjectTask(ProjectTaskDto dto);
+    List<UserDto> getUsersFromTaskId(Long taskId);
 }
