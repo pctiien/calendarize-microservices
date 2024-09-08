@@ -43,6 +43,12 @@ public class ProjectTaskController {
         projectTaskService.assignTo(projectTaskId,userId);
         return ResponseEntity.noContent().build();
     }
+    @PutMapping(value = "{projectTaskId}/user",params= "email")
+    public ResponseEntity<Void> addMemberToProject(@RequestParam String email , @PathVariable Long projectTaskId)
+    {
+        projectTaskService.assignTo(projectTaskId,email);
+        return ResponseEntity.noContent().build();
+    }
 
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable("id") Long projectTaskId)

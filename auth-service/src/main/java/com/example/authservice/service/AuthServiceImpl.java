@@ -64,4 +64,13 @@ public class AuthServiceImpl implements IAuthService{
 
     }
 
+    @Override
+    public UserResponse getUserByEmail(String email) {
+        User user = userRepository.findByEmail(email).orElseThrow(()->new ResourceNotFoundException("User","email",email));
+        return UserResponse.builder()
+                .id(user.getId())
+                .email(user.getEmail())
+                .name(user.getName()).build();
+    }
+
 }

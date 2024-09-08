@@ -14,10 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/IAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/IAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/client/AuthServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/client/AuthServiceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/dto/ProjectTaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/dto/ProjectTaskDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/TaskMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/TaskMemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/IProjectTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/IProjectTaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/ProjectTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/ProjectTaskServiceImpl.java" afterDir="false" />
     </list>
@@ -71,34 +72,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ApigatewayServerApplication.executor": "Run",
-    "Spring Boot.AppuserServiceApplication.executor": "Run",
-    "Spring Boot.AuthServiceApplication.executor": "Run",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.LifetaskServiceApplication.executor": "Run",
-    "Spring Boot.ProjectServiceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "19",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApigatewayServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AppuserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LifetaskServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProjectServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/wow/hehe/Learning/Backend/Projects/C1/calendarize-microservices&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -215,7 +216,9 @@
       <workItem from="1725188827435" duration="17630000" />
       <workItem from="1725362143010" duration="8361000" />
       <workItem from="1725531769023" duration="15111000" />
-      <workItem from="1725609781068" duration="12421000" />
+      <workItem from="1725609781068" duration="13362000" />
+      <workItem from="1725647543718" duration="1659000" />
+      <workItem from="1725804709086" duration="3804000" />
     </task>
     <servers />
   </component>

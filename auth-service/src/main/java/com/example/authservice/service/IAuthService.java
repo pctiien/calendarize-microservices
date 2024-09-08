@@ -11,5 +11,6 @@ public interface IAuthService {
     ApiResponse registerUser(SignUpRequest signUpRequest);
 
     UserResponse getUserById(Long id);
+    UserResponse getUserByEmail(String email);
 
 }

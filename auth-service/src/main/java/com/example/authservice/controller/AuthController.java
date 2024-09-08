@@ -4,6 +4,7 @@ import com.example.authservice.dto.*;
 
 import com.example.authservice.entity.AuthProvider;
 import com.example.authservice.entity.User;
+import com.example.authservice.exception.ResourceNotFoundException;
 import com.example.authservice.exception.UserAlreadyExistsException;
 import com.example.authservice.repository.UserRepository;
 import com.example.authservice.security.TokenProvider;
@@ -42,6 +43,10 @@ class AuthController {
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long userId)
     {
         return ResponseEntity.ok(authService.getUserById(userId));
+    }
+    @GetMapping(value = "/users",params = "email")
+    public ResponseEntity<UserResponse> getUserByEmail(@RequestParam("email") String email) {
+        return ResponseEntity.ok(authService.getUserByEmail(email));
     }
 
 }
