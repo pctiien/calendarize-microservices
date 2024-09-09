@@ -44,12 +44,19 @@ public class ProjectTaskController {
         projectTaskService.assignTo(projectTaskId,userId);
         return ResponseEntity.noContent().build();
     }
-    @PutMapping(value = "{projectTaskId}/users",params= "email")
+    @PostMapping(value = "{projectTaskId}/users",params= "email")
     public ResponseEntity<Void> addMemberToProject(@RequestParam String email , @PathVariable Long projectTaskId)
     {
         projectTaskService.assignTo(projectTaskId,email);
         return ResponseEntity.noContent().build();
     }
+    @PostMapping(value = "{projectTaskId}/users",params= "emails")
+    public ResponseEntity<Void> addMemberToProject(@RequestParam("emails") List<String> emails , @PathVariable Long projectTaskId)
+    {
+        projectTaskService.assignTo(projectTaskId,emails);
+        return ResponseEntity.noContent().build();
+    }
+
 
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable("id") Long projectTaskId)

@@ -3,6 +3,8 @@ package com.example.authservice.service;
 import com.example.authservice.dto.*;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.util.List;
+
 
 public interface IAuthService {
 
@@ -12,5 +14,6 @@ public interface IAuthService {
 
     UserResponse getUserById(Long id);
     UserResponse getUserByEmail(String email);
+    List<UserResponse> getUserByEmail(List<String> email);
 
 }

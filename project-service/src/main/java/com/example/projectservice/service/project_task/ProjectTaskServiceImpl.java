@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -71,6 +72,17 @@ public class ProjectTaskServiceImpl implements IProjectTaskService{
             taskMemberRepository.save(new TaskMember(projectTaskId,userDto.getId()));
         }else{
             throw new UserNotFoundException("email",email);
+        }
+    }
+
+    @Override
+    public void assignTo(Long projectTaskId, List<String> emails) {
+        List<UserDto> userDtos = authServiceClient.getUsersByEmails(emails).getBody();
+        if(userDtos!=null)
+        {
+            userDtos.stream().filter(Objects::nonNull).forEach(dto-> taskMemberRepository.save(new TaskMember(projectTaskId,dto.getId())));
+        }else{
+            throw new UserNotFoundException("email", emails.toString());
         }
     }
 

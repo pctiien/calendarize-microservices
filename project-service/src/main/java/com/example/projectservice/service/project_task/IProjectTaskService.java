@@ -13,6 +13,7 @@ public interface IProjectTaskService {
     void doneProjectTask(Long projectTaskId);
     void assignTo(Long projectTaskId, Long userId);
     void assignTo(Long projectTaskId, String email);
+    void assignTo(Long projectTaskId, List<String> emails);
     void deleteTask(Long projectTaskId);
     ProjectTask editProjectTask(ProjectTaskDto dto);
     List<UserDto> getUsersFromTaskId(Long taskId);

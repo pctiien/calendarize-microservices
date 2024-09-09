@@ -19,6 +19,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -47,6 +49,11 @@ class AuthController {
     @GetMapping(value = "/users",params = "email")
     public ResponseEntity<UserResponse> getUserByEmail(@RequestParam("email") String email) {
         return ResponseEntity.ok(authService.getUserByEmail(email));
+    }
+    @GetMapping(value = "/users",params = "emails")
+    public ResponseEntity<List<UserResponse>> getUsersByEmails(@RequestParam("emails") List<String> emails)
+    {
+        return ResponseEntity.ok(authService.getUserByEmail(emails));
     }
 
 }

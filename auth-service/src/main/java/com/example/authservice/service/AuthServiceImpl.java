@@ -17,6 +17,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements IAuthService{
@@ -72,5 +75,21 @@ public class AuthServiceImpl implements IAuthService{
                 .email(user.getEmail())
                 .name(user.getName()).build();
     }
+
+    @Override
+    public List<UserResponse> getUserByEmail(List<String> emails) {
+
+        List<User> users = userRepository.findAllByEmailIn(emails).stream()
+                .map(user -> user.orElseThrow(() ->
+                        new ResourceNotFoundException("user", "email", "[Không tìm thấy email]")))
+                .toList();
+        return users.stream()
+                .map(user -> UserResponse.builder()
+                        .id(user.getId())
+                        .email(user.getEmail())
+                        .name(user.getName()).build())
+                .collect(Collectors.toList());
+    }
+
 
 }
