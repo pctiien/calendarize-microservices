@@ -23,7 +23,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                //.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeRequests(authz -> authz
                         .anyRequest().permitAll() // Cấu hình quyền truy cập tại đây
@@ -31,17 +31,17 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Collections.singletonList("http://localhost:5173"));
-        config.setAllowedMethods(Collections.singletonList("*"));
-        config.setAllowCredentials(true);
-        config.addAllowedHeader("*");
-        config.setExposedHeaders(Arrays.asList("Authorization"));
-        config.setMaxAge(3600L);
-        source.registerCorsConfiguration("/**", config);
-        return source;
-    }
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        CorsConfiguration config = new CorsConfiguration();
+//        config.setAllowedOrigins(Collections.singletonList("http://localhost:5173"));
+//        config.setAllowedMethods(Collections.singletonList("*"));
+//        config.setAllowCredentials(true);
+//        config.addAllowedHeader("*");
+//        config.setExposedHeaders(Arrays.asList("Authorization"));
+//        config.setMaxAge(3600L);
+//        source.registerCorsConfiguration("/**", config);
+//        return source;
+//    }
 }

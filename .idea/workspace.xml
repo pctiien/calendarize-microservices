@@ -14,14 +14,9 @@
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/IAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/IAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/client/AuthServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/client/AuthServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/IProjectTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/IProjectTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/ProjectTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/ProjectTaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +108,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LifetaskServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ProjectServiceApplication">
     <configuration name="ApigatewayServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="apigateway-server" />
@@ -220,7 +215,7 @@
       <workItem from="1725609781068" duration="13362000" />
       <workItem from="1725647543718" duration="1659000" />
       <workItem from="1725804709086" duration="5172000" />
-      <workItem from="1725877237288" duration="6165000" />
+      <workItem from="1725877237288" duration="13494000" />
     </task>
     <servers />
   </component>
@@ -230,11 +225,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/controller/LifeTaskController.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/TokenProvider.java</url>
           <line>28</line>
