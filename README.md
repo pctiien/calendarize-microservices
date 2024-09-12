@@ -9,7 +9,7 @@ Microservices Architecture Spring Boot, Oauth2, jpa, eureka server, api gateway,
 
 ## Introduce
 
-Dự án này là một ứng dụng sắp xếp thời gian biểu cho cá nhân hoặc dự án nhóm. Calendarize được xây dựng bằng công nghệ Spring boot cho backend và ReactJs cho UI
+This project simply is an application schedueling time table for personal or team project. Calendarize was built in Sping boot technology for backend and ReactJs for client UI
 
 ## Features
 
