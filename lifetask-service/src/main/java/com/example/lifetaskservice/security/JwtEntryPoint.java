@@ -1,4 +1,4 @@
-package com.example.authservice.security.jwt;
+package com.example.lifetaskservice.security;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ public class JwtEntryPoint implements AuthenticationEntryPoint {
                          AuthenticationException authException)
             throws IOException, ServletException {
         logger.error("Unauthenticated error Message {}", authException.getMessage());
-        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error -> Unauthenticated");
+        response.sendError(HttpServletResponse.SC_ACCEPTED, "Error -> Unauthenticated");
     }
 
 }

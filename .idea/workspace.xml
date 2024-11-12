@@ -13,61 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/ApigatewayServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/client/AuthWebClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/AppProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/config/WebClientConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/TokenProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/java/com/example/apigatewayserver/security/UserPrincipal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/AppuserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/AppuserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/controller/AppUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/controller/AppUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/dto/AppUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/dto/AppUserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/entity/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/entity/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/mapper/AppUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/mapper/AppUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/repository/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/repository/AppUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/service/AppUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/java/com/example/appuserservice/service/IAppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/service/IAppUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/test/java/com/example/appuserservice/AppuserServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/java/com/example/appuserservice/AppuserServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/test/java/com/example/appuserservice/entity/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/java/com/example/appuserservice/entity/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/test/java/com/example/appuserservice/service/AppUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/java/com/example/appuserservice/service/AppUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appuser-service/src/test/java/com/example/appuserservice/service/IAppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/java/com/example/appuserservice/service/IAppUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/AuthServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/AuthServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/jwt/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/oauth2/OAuth2AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/oauth2/OAuth2AuthenticationSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/authService/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/IAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/authService/IAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/java/com/example/lifetaskservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifetask-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lifetask-service/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +107,7 @@
       <recent name="H:\wow\hehe\Learning\Backend\Projects\C1\calendarize-microservices\appuser-service\src\main\java\com\example\appuserservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.lifetaskservice.security" />
       <recent name="com.example.authservice.exception" />
       <recent name="com.example.authservice.security.jwt" />
       <recent name="com.example.authservice.controller" />
@@ -286,7 +234,7 @@
       <workItem from="1731319321384" duration="21287000" />
       <workItem from="1731422971864" duration="44000" />
       <workItem from="1731427317388" duration="5274000" />
-      <workItem from="1731432855344" duration="3272000" />
+      <workItem from="1731432855344" duration="3886000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,5 @@
 package com.example.authservice.config;
+import com.example.authservice.security.CustomAccessDeniedHandler;
 import com.example.authservice.security.jwt.JwtEntryPoint;
 import com.example.authservice.security.jwt.JwtTokenFilter;
 import com.example.authservice.security.oauth2.CustomOAuth2UserService;
@@ -24,7 +25,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 @EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
-
+    private final CustomAccessDeniedHandler customAccessDeniedHandler;
     private final CustomOAuth2UserService customOAuth2UserService;
     private final OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
     private final HttpCookieOAuth2AuthorizationRequestRepository httpCookieOAuth2AuthorizationRequestRepository;
@@ -74,9 +75,7 @@ public class SecurityConfig {
                         .successHandler(oAuth2AuthenticationSuccessHandler)
                 )
                 .exceptionHandling(e->{
-                    e.accessDeniedHandler((request, response, accessDeniedException) -> {
-                        response.sendError(HttpServletResponse.SC_FORBIDDEN,"Access Denied: You do not have the required permissions.");
-                    });
+                    e.accessDeniedHandler(customAccessDeniedHandler);
                     e.authenticationEntryPoint(jwtEntryPoint);
                 })
         ;
