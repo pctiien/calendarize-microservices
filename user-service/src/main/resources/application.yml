@@ -1,8 +1,9 @@
+
 spring:
   application:
-    name: "lifetask-service"
+    name: "user-service"
   datasource:
-    url: jdbc:sqlserver://DESKTOP-0O190JQ\SQLEXPRESS:1433;databaseName=lifetask_ms;encrypt=true;trustServerCertificate=true
+    url: jdbc:sqlserver://DESKTOP-0O190JQ\SQLEXPRESS:1433;databaseName=appuser_ms;encrypt=true;trustServerCertificate=true
     username: sa
     password: Adteamkingp3
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
@@ -15,7 +16,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.SQLServerDialect
 server:
-  port: 8083
+  port: 8081
+
 eureka:
   instance:
     preferIpAddress: true
@@ -24,6 +26,7 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
+
 jwt:
   secret: 04ca023b39512e46d0c2cf4b48d5aac61d34302994c87ed4eff225dcf3b0a218739f3897051a057f9b846a69ea2927a587044164b7bae5e1306219d50b588cb1
   expiration: 86400

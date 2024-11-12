@@ -1,6 +1,6 @@
-package com.example.lifetaskservice.config;
+package com.example.appuserservice.config;
 
-import com.example.lifetaskservice.security.JwtTokenFilter;
+import com.example.appuserservice.security.JwtTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
     @Bean
-    public JwtTokenFilter jwtTokenFilter(){
+    public JwtTokenFilter jwtTokenFilter() {
         return new JwtTokenFilter();
     }
 

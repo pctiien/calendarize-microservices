@@ -1,0 +1,73 @@
+package com.example.projectservice.security;
+
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.SignatureException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class JwtTokenProvider {
+
+    @Value("${jwt.secret}")
+    private String jwtSecret ;
+    @Value("${jwt.expiration}")
+    private int jwtExpiration;
+
+    private static final Logger log = LoggerFactory.getLogger(JwtTokenProvider.class);
+
+    public Authentication getAuthentication(String token) {
+
+        Claims claims = Jwts.parser()
+                .setSigningKey(jwtSecret).build()
+                .parseClaimsJws(token)
+                .getBody();
+        String username = claims.getSubject();
+        List<GrantedAuthority> authorities = extractAuthorities(claims);
+        return new UsernamePasswordAuthenticationToken(username,null,authorities);
+    }
+    public List<GrantedAuthority> extractAuthorities(Claims claims)
+    {
+        List<GrantedAuthority> authorities =  new ArrayList<>();
+
+        @SuppressWarnings("unchecked")
+        List<String> roles = (List<String>)claims.get("authorities");
+        if(roles != null)
+        {
+            roles.forEach(role->{
+                authorities.add(new SimpleGrantedAuthority(role));
+            });
+        }
+        return authorities;
+    }
+
+    public boolean validateToken(String token) {
+        try {
+            Jwts.parser()
+                    .setSigningKey(jwtSecret).build()
+                    .parseClaimsJws(token);
+
+            return true;
+        } catch (SignatureException e) {
+            log.error("Invalid JWT signature -> Message: ", e);
+        } catch (MalformedJwtException e) {
+            log.error("Invalid format Token -> Message: ", e);
+        } catch (ExpiredJwtException e) {
+            log.error("Expired JWT Token -> Message: ", e);
+        } catch (UnsupportedJwtException e) {
+            log.error("Unsupported JWT Token -> Message: ", e);
+        } catch (IllegalArgumentException e) {
+            log.error("JWT claims string is empty -> Message: ", e);
+        }
+        return false;
+    }
+
+}

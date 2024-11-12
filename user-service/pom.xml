@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>lifetask-service</artifactId>
+    <artifactId>user-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lifetask-service</name>
-    <description>lifetask-service</description>
+    <name>appuser-service</name>
+    <description>appuser-service</description>
     <url/>
     <licenses>
         <license/>
@@ -72,7 +72,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -91,8 +95,8 @@
             <version>0.12.3</version>
             <scope>runtime</scope>
         </dependency>
-    </dependencies>
 
+    </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>

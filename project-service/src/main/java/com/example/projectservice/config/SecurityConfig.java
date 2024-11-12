@@ -1,5 +1,6 @@
 package com.example.projectservice.config;
 
+import com.example.projectservice.security.JwtTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -8,6 +9,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -21,12 +23,17 @@ import java.util.Collections;
 public class SecurityConfig {
 
     @Bean
+    public JwtTokenFilter jwtTokenFilter(){
+        return new JwtTokenFilter();
+    }
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 //.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeRequests(authz -> authz
                         .anyRequest().permitAll() // Cấu hình quyền truy cập tại đây
+                        .and().addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
                 );
         return http.build();
     }

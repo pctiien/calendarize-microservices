@@ -1,7 +1,7 @@
 package com.example.authservice.security.oauth2;
 
 import com.example.authservice.config.AppProperties;
-import com.example.authservice.security.TokenProvider;
+import com.example.authservice.security.jwt.JwtTokenProvider;
 import com.example.authservice.util.CookieUtils;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
@@ -17,14 +17,13 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.Optional;
 
-import static com.example.authservice.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository.REDIRECT_URI_PARAM_COOKIE_NAME;
 import static com.example.authservice.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository.CLIENT_BASE_URL_COOKIE_NAME;
 
 
 @Component
 public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
-    private final TokenProvider tokenProvider;
+    private final JwtTokenProvider tokenProvider;
 
     private final AppProperties appProperties;
 
@@ -32,7 +31,7 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 
 
     @Autowired
-    OAuth2AuthenticationSuccessHandler(TokenProvider tokenProvider, AppProperties appProperties,
+    OAuth2AuthenticationSuccessHandler(JwtTokenProvider tokenProvider, AppProperties appProperties,
                                        HttpCookieOAuth2AuthorizationRequestRepository httpCookieOAuth2AuthorizationRequestRepository) {
         this.tokenProvider = tokenProvider;
         this.appProperties = appProperties;
