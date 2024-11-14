@@ -10,7 +10,6 @@ public class ProjectMapper {
                 .endDate(dto.getEndDate())
                 .status(dto.getStatus())
                 .startDate(dto.getStartDate())
-                .hostId(dto.getHostId())
                 .description(dto.getDescription())
                 .build();
     }

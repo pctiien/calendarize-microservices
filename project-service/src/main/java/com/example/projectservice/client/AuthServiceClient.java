@@ -12,10 +12,10 @@ import java.util.List;
 @FeignClient(name = "auth-service")
 public interface AuthServiceClient {
 
-    @GetMapping("/api/auth/users/{userId}")
+    @GetMapping("/api/user/{userId}")
     ResponseEntity<UserDto> getUserById(@PathVariable Long userId);
 
-    @GetMapping(value = "/api/auth/users",params = "email")
+    @GetMapping(value = "/api/user",params = "email")
     ResponseEntity<UserDto> getUserByEmail(@RequestParam("email") String email) ;
 
     @GetMapping(value = "api/auth/users",params = "emails")

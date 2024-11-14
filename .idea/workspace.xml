@@ -13,8 +13,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/jwt/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/jwt/JwtTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/userService/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/userService/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/userService/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/userService/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/client/AuthServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/client/AuthServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/controller/ProjectTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/ProjectTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/ProjectTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/TaskMember.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/entity/TaskMemberId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/mapper/ProjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/mapper/ProjectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/ProjectTaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/repository/TaskMemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/security/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/security/JwtTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/IProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/IProjectTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/IProjectTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/ProjectTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project_task/ProjectTaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +134,7 @@
       <recent name="H:\wow\hehe\Learning\Backend\Projects\C1\calendarize-microservices\appuser-service\src\main\java\com\example\appuserservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.projectservice.security" />
       <recent name="com.example.lifetaskservice.security" />
       <recent name="com.example.authservice.exception" />
       <recent name="com.example.authservice.security.jwt" />
@@ -234,7 +262,9 @@
       <workItem from="1731319321384" duration="21287000" />
       <workItem from="1731422971864" duration="44000" />
       <workItem from="1731427317388" duration="5274000" />
-      <workItem from="1731432855344" duration="3886000" />
+      <workItem from="1731432855344" duration="4106000" />
+      <workItem from="1731483502092" duration="9148000" />
+      <workItem from="1731581196412" duration="6964000" />
     </task>
     <servers />
   </component>
@@ -278,6 +308,63 @@
           <url>file://$PROJECT_DIR$/user-service/src/main/java/com/example/appuserservice/service/AppUserService.java</url>
           <line>20</line>
           <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>111</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/project-service/src/main/java/com/example/projectservice/service/project/ProjectServiceImpl.java</url>
+          <line>110</line>
+          <properties class="com.example.projectservice.service.project.ProjectServiceImpl" method="addMemberToProject">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="160" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

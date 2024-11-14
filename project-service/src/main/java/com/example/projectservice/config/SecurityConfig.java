@@ -3,23 +3,16 @@ package com.example.projectservice.config;
 import com.example.projectservice.security.JwtTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
-import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.server.SecurityWebFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import java.util.Arrays;
-import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
     @Bean
@@ -31,10 +24,11 @@ public class SecurityConfig {
         http
                 //.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeRequests(authz -> authz
-                        .anyRequest().permitAll() // Cấu hình quyền truy cập tại đây
-                        .and().addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
-                );
+                .authorizeHttpRequests(authz -> authz
+                        .anyRequest().authenticated()
+                )
+                .addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+        ;
         return http.build();
     }
 

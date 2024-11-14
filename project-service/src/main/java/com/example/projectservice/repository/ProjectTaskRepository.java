@@ -12,9 +12,9 @@ import java.util.Optional;
 public interface ProjectTaskRepository extends JpaRepository<ProjectTask,Long> {
     Optional<List<ProjectTask>> findAllByProjectId(Long projectId);
 
-    @Query("Select pt from ProjectTask pt join TaskMember tm on pt.id = tm.taskId where tm.userId = :userId")
-    Optional<List<ProjectTask>> findAllByUserId(Long userId);
+    @Query("Select pt from ProjectTask pt join ProjectUser pu where pu.userId=:userId")
+    List<ProjectTask> findAllByUserId(Long userId);
 
-    @Query("Select pt from ProjectTask pt join TaskMember tm on pt.id = tm.taskId where tm.userId = :userId and pt.startDate>=:from and pt.startDate <= :to " )
-    Optional<List<ProjectTask>> findAllByUserIdBetween(Long userId, LocalDateTime from, LocalDateTime to);
+    @Query("Select pt from ProjectTask pt join ProjectUser pu where pu.userId=:userId and pt.startDate>=:from and pt.startDate <= :to " )
+    List<ProjectTask> findAllByUserIdBetween(Long userId, LocalDateTime from, LocalDateTime to);
 }

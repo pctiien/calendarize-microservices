@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -18,11 +17,8 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN') or (isAuthenticated() and principal.email == #email)")
-    public ResponseEntity<List<User>> getAllUsers(@RequestParam(value = "email", required = false) String email) {
-        if (email != null) {
-            return ResponseEntity.ok(Collections.singletonList(userService.getUserByEmail(email)));
-        }
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
@@ -30,6 +26,12 @@ public class UserController {
     @PreAuthorize("hasAuthority('ADMIN') or (isAuthenticated() and hasAuthority('USER') and principal.id == #userId)")
     public ResponseEntity<UserDto> getUserById(@PathVariable Long userId){
         return ResponseEntity.ok(userService.getUserById(userId));
+    }
+
+    @GetMapping(params = "email")
+    @PreAuthorize("(isAuthenticated() and hasAuthority('USER')) or hasAuthority('ADMIN') ")
+    public ResponseEntity<UserDto> getUserByEmail(@RequestParam(value = "email",required = true) String email){
+        return ResponseEntity.ok(userService.getUserByEmail(email));
     }
 
     @PatchMapping

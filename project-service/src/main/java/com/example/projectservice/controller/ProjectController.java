@@ -8,10 +8,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/projects")
@@ -46,11 +48,25 @@ public class ProjectController {
     {
         return ResponseEntity.ok(projectService.getProjectsByUserId(userId));
     }
-    @PostMapping("{projectId}/user/{userId}")
-    public ResponseEntity<Void> addMemberToProject(@PathVariable Long projectId,@PathVariable Long userId)
+    @PostMapping("add-member")
+    @PreAuthorize("isAuthenticated()")
+    public ResponseEntity<Void> addMemberToProject(@RequestBody Map<String,Object> requestData)
     {
-        projectService.addMemberToProject(projectId,userId);
+        Long projectId = Long.valueOf(requestData.get("projectId").toString());
+        String userEmail = requestData.get("userEmail").toString();
+        projectService.addMemberToProject(projectId,userEmail);
         return ResponseEntity.noContent().build();
+    }
+    @PatchMapping("assign-role")
+    @PreAuthorize("isAuthenticated()")
+    public ResponseEntity<Project> assignRole(@RequestBody Map<String,Object> requestData)
+    {
+        Long projectId = Long.valueOf(requestData.get("projectId").toString());
+        Long userId = Long.valueOf(requestData.get("userId").toString());
+        Long roleId = Long.valueOf(requestData.get("projectRoleId").toString());
+        return ResponseEntity.ok(projectService.assignRole(
+                projectId,userId,roleId
+        ));
     }
 
 

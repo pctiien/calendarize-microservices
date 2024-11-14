@@ -25,6 +25,8 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     @Autowired
     private JwtTokenProvider jwtTokenProvider ;
 
+    public static ThreadLocal<String> tokenHolder = new ThreadLocal<>();
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = extractToken(request);
@@ -33,6 +35,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                 Authentication authentication = jwtTokenProvider.getAuthentication(token);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
                 request.setAttribute("JWT_TOKEN",token);
+                tokenHolder.set(token);
                 filterChain.doFilter(request,response);
             }else{
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Invalid or expired token");
@@ -44,6 +47,8 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             response.getWriter().write("Token has expired for request");
         }catch (MalformedJwtException | SignatureException | UnsupportedJwtException | IllegalArgumentException e) {
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
+            response.getWriter().write("Invalid token");
+
         }
     }
 

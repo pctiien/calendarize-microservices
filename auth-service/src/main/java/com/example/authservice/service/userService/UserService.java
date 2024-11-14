@@ -43,8 +43,9 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User getUserByEmail(String email) {
-        return userRepository.findByEmail(email).orElseThrow(()->new ResourceNotFoundException("User","email",email));
+    public UserDto getUserByEmail(String email) {
+        User user = userRepository.findByEmail(email).orElseThrow(()->new ResourceNotFoundException("User","email",email));
+        return UserMapper.toDto(user);
     }
 
     @Override

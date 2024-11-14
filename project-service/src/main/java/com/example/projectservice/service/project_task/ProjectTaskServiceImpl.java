@@ -5,15 +5,16 @@ import com.example.projectservice.dto.ProjectTaskDto;
 import com.example.projectservice.dto.UserDto;
 import com.example.projectservice.entity.Project;
 import com.example.projectservice.entity.ProjectTask;
+import com.example.projectservice.entity.ProjectUser;
 import com.example.projectservice.entity.Status;
-import com.example.projectservice.entity.TaskMember;
 import com.example.projectservice.exception.ProjectNotFoundException;
+import com.example.projectservice.exception.ProjectUserNotFoundException;
 import com.example.projectservice.exception.TaskNotFoundException;
 import com.example.projectservice.exception.UserNotFoundException;
 import com.example.projectservice.mapper.ProjectTaskMapper;
 import com.example.projectservice.repository.ProjectRepository;
 import com.example.projectservice.repository.ProjectTaskRepository;
-import com.example.projectservice.repository.TaskMemberRepository;
+import com.example.projectservice.repository.ProjectUserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,9 +28,8 @@ import java.util.Objects;
 public class ProjectTaskServiceImpl implements IProjectTaskService{
     private final ProjectTaskRepository projectTaskRepository;
     private final ProjectRepository projectRepository;
-    private final TaskMemberRepository taskMemberRepository;
     private final AuthServiceClient authServiceClient;
-
+    private final ProjectUserRepository projectUserRepository;
     @Override
     public List<ProjectTask> getAllProjectTasks() {
         return projectTaskRepository.findAll();
@@ -61,36 +61,29 @@ public class ProjectTaskServiceImpl implements IProjectTaskService{
     @Transactional
     @Override
     public void assignTo(Long projectTaskId, Long userId) {
-        taskMemberRepository.save(new TaskMember(projectTaskId,userId));
-    }
 
+        ProjectTask projectTask = projectTaskRepository.findById(projectTaskId).orElseThrow(()-> new TaskNotFoundException("id",projectTaskId.toString()));
+        ProjectUser projectUser = projectUserRepository.findByProjectAndUserId(projectTask.getProject(),userId).orElseThrow(()-> new ProjectUserNotFoundException("id",userId.toString()));
+        projectTask.assignToMember(projectUser);
+    }
     @Override
     public void assignTo(Long projectTaskId, String email) {
+        ProjectTask projectTask = projectTaskRepository.findById(projectTaskId).orElseThrow(()-> new TaskNotFoundException("id",projectTaskId.toString()));
         UserDto userDto = authServiceClient.getUserByEmail(email).getBody();
         if(userDto!=null)
         {
-            taskMemberRepository.save(new TaskMember(projectTaskId,userDto.getId()));
+            ProjectUser projectUser = projectUserRepository.findByProjectAndUserId(projectTask.getProject(),userDto.getId()).orElseThrow(()-> new ProjectUserNotFoundException("id",userDto.getId().toString()));
+            projectTask.assignToMember(projectUser);
         }else{
             throw new UserNotFoundException("email",email);
         }
     }
 
-    @Override
-    public void assignTo(Long projectTaskId, List<String> emails) {
-        List<UserDto> userDtos = authServiceClient.getUsersByEmails(emails).getBody();
-        if(userDtos!=null)
-        {
-            userDtos.stream().filter(Objects::nonNull).forEach(dto-> taskMemberRepository.save(new TaskMember(projectTaskId,dto.getId())));
-        }else{
-            throw new UserNotFoundException("email", emails.toString());
-        }
-    }
 
     @Transactional
     @Override
     public void deleteTask(Long projectTaskId) {
         projectTaskRepository.deleteById(projectTaskId);
-        taskMemberRepository.deleteAllByTaskId(projectTaskId);
     }
 
     @Override
@@ -105,8 +98,9 @@ public class ProjectTaskServiceImpl implements IProjectTaskService{
 
     @Override
     public List<UserDto> getUsersFromTaskId(Long taskId) {
-        List<TaskMember> userIds = taskMemberRepository.findAllByTaskId(taskId).orElse(new ArrayList<>());
-        return userIds.stream().map(u->authServiceClient.getUserById(u.getUserId()).getBody()).toList();
+        ProjectTask projectTask = projectTaskRepository.findById(taskId).orElseThrow(()->new TaskNotFoundException("id",taskId.toString()));
+        List<ProjectUser> projectUsers = projectTask.getProjectUsers().stream().toList();
+        return projectUsers.stream().map(u->authServiceClient.getUserById(u.getUserId()).getBody()).toList();
     }
 }
 

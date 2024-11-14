@@ -13,5 +13,6 @@ public interface IProjectService {
     ProjectResponseDto getProjectByProjectId(Long projectId);
     ProjectResponseDto getProjectByIdBetween(Long projectId, LocalDate from, LocalDate to);
     List<ProjectDto> getProjectsByUserId(Long userId);
-    void addMemberToProject(Long projectId,Long userId);
+    void addMemberToProject(Long projectId, String userEmail);
+    Project assignRole(Long projectId,Long userId,Long projectRoleId);
 }

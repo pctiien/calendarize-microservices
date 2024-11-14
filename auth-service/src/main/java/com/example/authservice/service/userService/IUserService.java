@@ -9,6 +9,6 @@ public interface IUserService {
     List<User> getAllUsers();
     UserDto updateUser(UserDto dto);
     UserDto getUserById(Long userId);
-    User getUserByEmail(String email);
+    UserDto getUserByEmail(String email);
     List<User> getUserByEmail(List<String> emails);
 }

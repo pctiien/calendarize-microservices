@@ -1,19 +1,18 @@
 package com.example.projectservice.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "project")
 @Builder
 public class Project {
@@ -28,9 +27,37 @@ public class Project {
     private LocalDateTime endDate;
     @Enumerated(EnumType.STRING)
     private Status status = Status.PENDING;
-    @Column(name = "host_id")
-    private Long hostId;
-    @OneToMany(mappedBy = "project", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    private List<ProjectTask> projectTasks;
 
+    @OneToMany(mappedBy = "project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<ProjectTask> projectTasks = new ArrayList<>() ;
+
+    @OneToMany(mappedBy = "project" , fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<ProjectUser> projectUsers  = new HashSet<>();
+
+    public void addMemberToProject(ProjectUser user)
+    {
+        if(projectUsers == null)
+        {
+            projectUsers = new HashSet<>();
+        }
+
+        projectUsers.add(user);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, startDate, endDate, status);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Project that = (Project) obj;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(startDate, that.startDate) &&
+                Objects.equals(endDate, that.endDate);
+
+    }
 }
