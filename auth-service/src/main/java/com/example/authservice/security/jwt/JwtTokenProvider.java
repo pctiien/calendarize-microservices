@@ -36,6 +36,7 @@ public class JwtTokenProvider {
 
         return Jwts.builder()
                 .setSubject(userPrincipal.getEmail())
+                .claim("id",userPrincipal.getId())
                 .claim("authorities",authorities)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + appProperties.getAuth().getTokenExpirationMsec()))
