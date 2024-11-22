@@ -10,7 +10,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
+    properties:
+      hibernate.format_sql: true
+      hibernate.id.new_generator_mappings: true
+
+
 
 server:
   port: 8082

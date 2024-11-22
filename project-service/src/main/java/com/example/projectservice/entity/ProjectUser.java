@@ -39,7 +39,7 @@ public class ProjectUser {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<ProjectTask> projectTasks;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(name = "projectuser_role",
             joinColumns = @JoinColumn(name = "projectuser_id"),
             inverseJoinColumns = @JoinColumn(name = "projectrole_id")
@@ -48,7 +48,7 @@ public class ProjectUser {
 
     public void addProjectRole(ProjectRole projectRole)
     {
-        projectRoles.add(projectRole);
+        this.projectRoles.add(projectRole);
     }
     public ProjectUser(Long userId, Project project) {
         this.userId = userId;

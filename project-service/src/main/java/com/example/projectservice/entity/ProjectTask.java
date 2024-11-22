@@ -10,6 +10,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -42,13 +43,13 @@ public class ProjectTask {
     @JoinColumn(name = "project_id")
     private Project project;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "projectuser_task",
-            joinColumns = @JoinColumn(name = "projectuser_id"),
-            inverseJoinColumns = @JoinColumn(name = "projecttask_id")
+            joinColumns = @JoinColumn(name = "projecttask_id"),
+            inverseJoinColumns = @JoinColumn(name = "projectuser_id")
     )
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Set<ProjectUser> projectUsers;
+    private Set<ProjectUser> projectUsers = new HashSet<>();
 
     public void assignToMember(ProjectUser projectUser)
     {

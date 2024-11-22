@@ -74,13 +74,12 @@ public class ProjectTaskServiceImpl implements IProjectTaskService{
         {
             ProjectUser projectUser = projectUserRepository.findByProjectAndUserId(projectTask.getProject(),userDto.getId()).orElseThrow(()-> new ProjectUserNotFoundException("id",userDto.getId().toString()));
             projectTask.assignToMember(projectUser);
+            projectTaskRepository.save(projectTask);
         }else{
             throw new UserNotFoundException("email",email);
         }
     }
 
-
-    @Transactional
     @Override
     public void deleteTask(Long projectTaskId) {
         projectTaskRepository.deleteById(projectTaskId);

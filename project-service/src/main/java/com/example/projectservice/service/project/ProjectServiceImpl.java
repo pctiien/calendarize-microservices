@@ -12,8 +12,12 @@ import com.example.projectservice.exception.ProjectUserNotFoundException;
 import com.example.projectservice.exception.UserNotFoundException;
 import com.example.projectservice.mapper.ProjectMapper;
 import com.example.projectservice.repository.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -29,6 +33,8 @@ public class ProjectServiceImpl implements IProjectService {
     private final AuthServiceClient authServiceClient;
     private final ProjectTaskRepository projectTaskRepository;
     private final ProjectRoleRepository projectRoleRepository;
+    @PersistenceContext
+    private EntityManager entityManager;
     @Override
     public List<Project> getAllProjects() {
         return projectRepository.findAll();
@@ -39,33 +45,19 @@ public class ProjectServiceImpl implements IProjectService {
         Project project = ProjectMapper.mapToProject(dto);
         ProjectUser projectOwner = new ProjectUser(dto.getHostId(),project);
         projectOwner.addProjectRole(projectRoleRepository.findByName(ProjectRoleName.PROJECT_OWNER));
+        projectOwner.addProjectRole(projectRoleRepository.findByName(ProjectRoleName.PROJECT_CONTRIBUTOR));
+        projectOwner.addProjectRole(projectRoleRepository.findByName(ProjectRoleName.PROJECT_VIEWER));
+        projectOwner.addProjectRole(projectRoleRepository.findByName(ProjectRoleName.PROJECT_MEMBER));
+
         project.addMemberToProject(projectOwner);
         projectRepository.save(project);
         return project;
     }
 
     @Override
-    public ProjectResponseDto getProjectByProjectId(Long projectId) {
+    public Project getProjectByProjectId(Long projectId) {
 
-        Project project = projectRepository.findById(projectId).orElseThrow(()->new ProjectNotFoundException("id",projectId.toString()));
-        List<UserDto> members = getProjectMembersByProjectId(projectId);
-
-        return ProjectResponseDto.builder()
-                .id(project.getId())
-                .description(project.getDescription())
-                .name(project.getName())
-                .status(project.getStatus())
-                .startDate(project.getStartDate())
-                .endDate(project.getEndDate())
-                .members(members.stream().map(
-                        m->TeamMember.builder()
-                                .id(m.getId())
-                                .name(m.getName())
-                                .email(m.getEmail())
-                                .projectTasks(projectTaskRepository.findAllByUserId(m.getId()))
-                                .build()
-                ).toList())
-                .build() ;
+        return projectRepository.findById(projectId).orElseThrow(()->new ProjectNotFoundException("id",projectId.toString()));
     }
 
     @Override
@@ -107,6 +99,7 @@ public class ProjectServiceImpl implements IProjectService {
         ).collect(Collectors.toList()) ;
     }
 
+    @Transactional
     @Override
     public void addMemberToProject(Long projectId, String userEmail) {
         Project project = projectRepository.findById(projectId).orElseThrow(()->new ProjectNotFoundException("id", projectId.toString()));
@@ -124,14 +117,20 @@ public class ProjectServiceImpl implements IProjectService {
         }
 
     }
-
+    @Transactional
     @Override
     public Project assignRole(Long projectId, Long userId, Long projectRoleId) {
         Project project = projectRepository.findById(projectId).orElseThrow(()->new ProjectNotFoundException("id",projectId.toString()));
         ProjectUser projectUser = projectUserRepository.findByProjectAndUserId(project,userId).orElseThrow(()->new ProjectUserNotFoundException("id",userId.toString()));
         ProjectRole projectRole = projectRoleRepository.findById(projectRoleId).orElseThrow(()->new ProjectRoleNotFoundException("id",projectRoleId.toString()));
-        projectUser.addProjectRole(projectRole);
-        projectUserRepository.save(projectUser);
+        boolean roleAssigned = projectUser.getProjectRoles().stream()
+                .anyMatch(role -> role.getId().equals(projectRoleId));
+
+        if (!roleAssigned) {
+            projectUser.addProjectRole(projectRole);
+            projectUserRepository.save(projectUser);
+        }
+
         return project;
     }
 

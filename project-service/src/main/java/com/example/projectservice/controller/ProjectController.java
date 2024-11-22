@@ -21,6 +21,7 @@ import java.util.Map;
 public class ProjectController {
     private final IProjectService projectService;
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<List<Project>> getAllProjects()
     {
         return ResponseEntity.ok(projectService.getAllProjects());
@@ -31,11 +32,12 @@ public class ProjectController {
         return ResponseEntity.status(HttpStatus.CREATED).body(projectService.createProject(dto));
     }
     @GetMapping(params = "projectId")
-    public ResponseEntity<ProjectResponseDto> getProjectByProject(@Param("projectId") Long projectId)
+    public ResponseEntity<Project> getProjectByProjectId(@Param("projectId") Long projectId)
     {
         return ResponseEntity.ok(projectService.getProjectByProjectId(projectId));
     }
     @GetMapping(params = {"projectId","from","to"})
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<ProjectResponseDto> getProjectByIdBetween(
             @Param("projectId") Long projectId,
             @Param("from") LocalDate from,
@@ -49,7 +51,7 @@ public class ProjectController {
         return ResponseEntity.ok(projectService.getProjectsByUserId(userId));
     }
     @PostMapping("add-member")
-    @PreAuthorize("isAuthenticated()")
+    @PreAuthorize("hasPermission(#requestData['projectId'],'PROJECT','PROJECT_CONTRIBUTOR')")
     public ResponseEntity<Void> addMemberToProject(@RequestBody Map<String,Object> requestData)
     {
         Long projectId = Long.valueOf(requestData.get("projectId").toString());
@@ -57,8 +59,8 @@ public class ProjectController {
         projectService.addMemberToProject(projectId,userEmail);
         return ResponseEntity.noContent().build();
     }
-    @PatchMapping("assign-role")
-    @PreAuthorize("isAuthenticated()")
+    @PostMapping("assign-role")
+    @PreAuthorize("hasPermission(#requestData['projectId'],'PROJECT','PROJECT_CONTRIBUTOR')")
     public ResponseEntity<Project> assignRole(@RequestBody Map<String,Object> requestData)
     {
         Long projectId = Long.valueOf(requestData.get("projectId").toString());
