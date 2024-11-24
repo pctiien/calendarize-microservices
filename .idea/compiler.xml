@@ -12,6 +12,7 @@
         <module name="project-service" />
         <module name="eureka-server" />
         <module name="lifetask-service" />
+        <module name="notification-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
       <module name="auth-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="lifetask-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
       <module name="project-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>

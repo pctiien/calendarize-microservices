@@ -1,5 +1,6 @@
 package com.example.authservice.service.authService;
 
+import com.example.authservice.constant.EmailSubject;
 import com.example.authservice.dto.*;
 import com.example.authservice.entity.AuthProvider;
 import com.example.authservice.entity.Role;
@@ -7,6 +8,7 @@ import com.example.authservice.entity.RoleName;
 import com.example.authservice.entity.User;
 import com.example.authservice.exception.ResourceNotFoundException;
 import com.example.authservice.exception.UserAlreadyExistsException;
+import com.example.authservice.rabbitmq.RabbitMQProducer;
 import com.example.authservice.repository.RoleRepository;
 import com.example.authservice.repository.UserRepository;
 import com.example.authservice.security.jwt.JwtTokenProvider;
@@ -31,6 +33,7 @@ public class AuthServiceImpl implements IAuthService{
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider tokenProvider;
     private final RoleRepository roleRepository ;
+    private final RabbitMQProducer rabbitMQProducer;
     @Override
     public AuthResponse authenticateUser(LoginRequest loginRequest, HttpServletResponse response) {
         Authentication authentication = authenticationManager.authenticate(
@@ -61,6 +64,12 @@ public class AuthServiceImpl implements IAuthService{
         user.assignRole(userRole);
 
         userRepository.save(user);
+
+        EmailDetails emailDetails = new EmailDetails();
+        emailDetails.setRecipient(user.getEmail());
+        emailDetails.setSubject(EmailSubject.WELCOME_SUBJECT);
+        emailDetails.setMsgBody(user.getName());
+        rabbitMQProducer.sendEmail(emailDetails);
 
         return new ApiResponse(true, "User registered successfully");
     }
