@@ -1,4 +1,4 @@
-package com.example.authservice.dto;
+package com.example.authservice.email;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

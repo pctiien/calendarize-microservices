@@ -13,11 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516adbcd-2a43-474e-a7db-d4563ee82d70" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/constant/EmailSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/email/EmailSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/dto/EmailDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/email/EmailDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/rabbitmq/RabbitMQProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/rabbitmq/RabbitMQProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/oauth2/CustomOAuth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/security/oauth2/CustomOAuth2UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/authService/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/authService/AuthServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -250,7 +250,7 @@
       <workItem from="1732295223807" duration="10846000" />
       <workItem from="1732384846246" duration="3815000" />
       <workItem from="1732438548818" duration="9494000" />
-      <workItem from="1732464323231" duration="6412000" />
+      <workItem from="1732464323231" duration="7624000" />
     </task>
     <servers />
   </component>

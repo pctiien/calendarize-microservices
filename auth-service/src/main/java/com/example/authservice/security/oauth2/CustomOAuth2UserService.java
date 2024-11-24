@@ -1,8 +1,11 @@
 package com.example.authservice.security.oauth2;
 
+import com.example.authservice.email.EmailSubject;
+import com.example.authservice.email.EmailDetails;
 import com.example.authservice.entity.AuthProvider;
 import com.example.authservice.entity.User;
 import com.example.authservice.exception.OAuth2AuthenticationProcessingException;
+import com.example.authservice.rabbitmq.RabbitMQProducer;
 import com.example.authservice.repository.UserRepository;
 import com.example.authservice.security.UserPrincipal;
 import com.example.authservice.security.oauth2.user.OAuth2UserInfo;
@@ -25,6 +28,7 @@ import java.util.Optional;
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
     private final UserRepository userRepository;
+    private final RabbitMQProducer rabbitMQProducer;
 
     @Override
     @Transactional
@@ -60,6 +64,10 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
             user = updateExistingUser(user,oAuth2UserInfo);
         }
         else{
+
+            EmailDetails emailDetails = new EmailDetails(user.getEmail(),user.getName(), EmailSubject.WELCOME_SUBJECT,null);
+            rabbitMQProducer.sendEmail(emailDetails);
+
             user = userRepository.save(registerNewUser(userRequest,oAuth2UserInfo));
         }
         return UserPrincipal.create(user,oAuth2User.getAttributes());

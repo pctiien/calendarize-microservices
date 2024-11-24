@@ -1,6 +1,6 @@
 package com.example.authservice.rabbitmq;
 
-import com.example.authservice.dto.EmailDetails;
+import com.example.authservice.email.EmailDetails;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
